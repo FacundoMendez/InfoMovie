@@ -29,7 +29,6 @@
     align-items: center;
     gap: 10rem;
     position: relative;
-    padding-left: 2rem;
 }
 
 
@@ -60,11 +59,12 @@
     }
     .home{
         min-height: 100vh;
-        width: 100%;
-        color: white;
-        font-size: 3rem;
-        overflow: hidden;
         padding: 0 1rem;
+    }
+
+    .box_list h2{
+        margin-bottom: 4rem;
+        font-size: 2.5rem;
     }
 }
 

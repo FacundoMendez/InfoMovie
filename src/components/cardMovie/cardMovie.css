@@ -8,6 +8,8 @@
     border-radius: 10px;
     cursor: pointer;
     overflow: hidden ;
+    margin: 0 auto;
+
 }
 
 .cardMovie img{
@@ -73,9 +75,6 @@
         height: 26rem;
     }
 
-    .cardMovie img{
-        object-fit: cover;
-    }
 }
 
 @media screen and (max-width:730px) {
@@ -84,9 +83,6 @@
         height: 26rem;
     }
 
-    .cardMovie img{
-        object-fit: cover;
-    }
 }
 
 
@@ -96,9 +92,6 @@
         height: 29rem;
     }
 
-    .cardMovie img{
-        object-fit: cover;
-    }
 }
 
 @media screen and (max-width:500px) {
@@ -107,9 +100,6 @@
         height: 26rem;
     }
 
-    .cardMovie img{
-        object-fit: cover;
-    }
 }
 
 @media screen and (max-width:420px) {
@@ -118,30 +108,13 @@
         height: 26.5rem;
     }
 
-    .cardMovie img{
-        object-fit: cover;
-    }
 }
 
 @media screen and (max-width:380px) {
     .cardMovie{
         width: 20rem; 
         height: 28rem;
-        position: relative;
-        left: 14%;
+        margin: 0 auto;
     }
 
-    .cardMovie img{
-        object-fit: cover;
-    }
-}
-
-@media screen and (max-width:358px) {
-    .cardMovie{
-        left: 8%;
-    }
-
-    .cardMovie img{
-        object-fit: cover;
-    }
 }
