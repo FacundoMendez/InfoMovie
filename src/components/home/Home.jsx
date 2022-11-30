@@ -1,9 +1,12 @@
 import React from 'react'
 import "./home.css"
+import Tendencias from './tendencias/Tendencias'
 
 const Home = () => {
   return (
-    <div className='home'>Home</div>
+    <div className='home'>
+        <Tendencias/>
+    </div>
   )
 }
 
