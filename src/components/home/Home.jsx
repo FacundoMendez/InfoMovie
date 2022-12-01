@@ -1,6 +1,7 @@
 import React from 'react'
 import ApiHome from './apiHome/ApiHome'
 import "./home.css"
+import Portada from './portada/Portada'
 import Trending from './trending/Trending'
 
 const Home = () => {
@@ -88,6 +89,7 @@ const Home = () => {
 
   return (
     <div className='home'>
+      <Portada/>
       <Trending/>
       {
         nameSection.map((movieSection, indx) => {

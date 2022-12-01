@@ -3,31 +3,27 @@ import "./sectionsStyle.css"
 import axios from 'axios'
 import CardsSection from '../CardsSection'
 import Pagination from '../componentsSection/pagination/Pagination'
-import { useParams } from 'react-router-dom'
 
 
-const LinkSections = () => {
-
-    const {roomId} = useParams()
+const TrendingSection = () => {
+    
 
     const [movieList , setMovieList] = useState([])
     const [paginationCount , setPaginationCount] = useState(1)
     const [loading , setLoading] = useState(false)
 
-    let id = roomId.replace(/:/, '');
 
     useEffect(() => {
 
-      const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US&with_genres=${id}&page=${paginationCount}`
-  
+      const endPoint = `https://api.themoviedb.org/3/trending/all/week?api_key=d37072b0437145eb49f3db14ffeeda76&page=${paginationCount}`
+      
       axios.get(endPoint)
         .then( res =>{
           const apiData = res.data
           setLoading(true)
           setMovieList(apiData.results)
         })
-    }, [paginationCount , id , roomId])
-
+    }, [paginationCount])
 
   return (
     <>
@@ -50,4 +46,4 @@ const LinkSections = () => {
   )
 }
 
-export default LinkSections
+export default TrendingSection

@@ -9,8 +9,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 10rem 0;
-    gap: 6rem;
+    margin: 10rem 0 ;
+    margin-top: 8rem;
+    gap: 4rem;
 }
 
 .box_list{

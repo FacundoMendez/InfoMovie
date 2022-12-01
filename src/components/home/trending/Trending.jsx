@@ -10,7 +10,7 @@ const Trending = () => {
     const [movieList , setMovieList] = useState([])
 
     useEffect(() => {
-      const endPoint = "https://api.themoviedb.org/3/trending/all/day?api_key=d37072b0437145eb49f3db14ffeeda76"
+      const endPoint = "https://api.themoviedb.org/3/trending/all/week?api_key=d37072b0437145eb49f3db14ffeeda76"
 
       axios.get(endPoint)
         .then( res =>{

@@ -72,9 +72,7 @@ const Nav = () => {
             <div className={ isActive ? "line line3_active" : "line line3"}></div>
         </div>
 
-        <NavLink className="linkHome" to="/">
-          Home
-        </NavLink>
+     
         {
           loginConnected !== true ? 
             <div className="button_login" onClick={() => handleToggleLogin()}>
@@ -96,14 +94,21 @@ const Nav = () => {
 
         {isActive ? 
             <div className='list_nav' >
-                <ul>
-                  {
-                    sectionsData.map((section, key) => {
-                      return <a  href={`/section/:${section.id}`} ><li key={key} onClick={handleToggle}>{section.name}</li> </a> 
-                    })
-                  }
+              <div className="box_links_nav">
+                <NavLink className="linkHome_despl" to="/" onClick={handleToggle}>
+                    Home
+                  </NavLink>
+                  <hr className='list_hr' />
+                  <ul>
+                    <a  href={`/trending`} ><li  onClick={handleToggle}>Trending</li> </a> 
+                    {
+                      sectionsData.map((section, key) => {
+                        return <a  href={`/section/:${section.id}`} ><li key={key} onClick={handleToggle}>{section.name}</li> </a> 
+                      })
+                    }
 
-                </ul>
+                  </ul>
+              </div>
             </div>
             : 
             null
