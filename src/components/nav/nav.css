@@ -1,6 +1,6 @@
 .nav{
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     position: fixed;
     top: 0;
     left: 0;
@@ -10,6 +10,7 @@
     align-items: center;
     transition: all .4s ease;
     overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.932);
 }
 
 .nav::before{
@@ -19,7 +20,7 @@
 }
 
 .lineNav{
-    top: -1rem;
+    top: 0rem;
     width: 0%;
     opacity: 0;
     position: relative;
@@ -48,7 +49,7 @@
 
 
 .list_nav{
-  width: 30rem;
+  width: 24rem;
   height: 100vh;
   min-height: 100vh;
   position: fixed;
@@ -57,14 +58,16 @@
   z-index: 999;
   transition: all .5s ease;
   overflow: hidden;
-  background-color: rgba(10, 10, 10, 0.945);
+  background-color: rgba(10, 10, 10, 0.973);
   backdrop-filter: blur(3px);
   color: white;
-  border: 2px ridge rgba(58, 255, 229, 0.082);
   box-shadow: 0 0rem 4rem rgba(163, 98, 201, 0.397);
   border-left: none;
   border-bottom: none;
   border-top: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .list_nav::before{
@@ -77,10 +80,33 @@
     height: 100%;
     z-index: -1;
     background-size: 100%;
-    filter: hue-rotate(40deg);
+    filter: hue-rotate(60deg);
     background-repeat: no-repeat;
     opacity: .5;
-    animation: move2 20s infinite linear;
+    animation: move2 10s infinite linear;
+}
+
+.list_nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    list-style: none;
+    gap: 1.5rem;
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.178);
+    backdrop-filter: blur(10px);
+}
+
+
+.list_nav li{
+    padding-left: 2rem;
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
 
 
@@ -94,8 +120,8 @@
     position: absolute;
     width: 5rem;
     height: 5rem;
-    left: 4rem;
-    top: 1.5rem;
+    left: 3rem;
+    top: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,7 +170,7 @@
     cursor: pointer;
     transition: all .3s ease;
     color: white;
-    top: 3rem;
+    top: 2.5rem;
     text-decoration: none;
     font-size: 1.9rem;
 }
@@ -159,7 +185,7 @@
     align-items: center;
     position: absolute;
     right: 4rem;
-    top: 2rem;
+    top: 1.5rem;
     background-color: #000000;
     backdrop-filter: blur(4px);
     background: linear-gradient(90deg, rgba(183,84,224,1) 2%, rgba(0,255,188,1) 100%);

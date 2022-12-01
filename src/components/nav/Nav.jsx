@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import Login from '../login/Login';
 import { NavLink, useNavigate } from 'react-router-dom'
 import Search from './search/Search';
-
+import axios from 'axios';
 
 const Nav = () => {
 
@@ -31,6 +31,9 @@ const Nav = () => {
   };
 
 
+  const [sectionsData, setSectionsData] = useState([]); /* active nav */
+  
+
   useEffect(() => {
       gsap.to(".lineNav",{
           delay:.8,
@@ -42,7 +45,20 @@ const Nav = () => {
       if(localStorage.getItem("token") !== null){
         setLoginConnected(true)
       }
+
+
+      const endpoint = "https://api.themoviedb.org/3/genre/movie/list?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US"
+
+      axios.get(endpoint)
+        .then(res => {
+          const apiData = res.data
+          setSectionsData(apiData.genres)
+        })
+
   },[])
+
+  console.log(sectionsData)
+
 
   return (
     <div className="nav">
@@ -79,9 +95,16 @@ const Nav = () => {
 
 
         {isActive ? 
-            <ul className='list_nav' >
-                <div className="imgBlur"></div>
-            </ul>
+            <div className='list_nav' >
+                <ul>
+                  {
+                    sectionsData.map((section, key) => {
+                      return <NavLink to={`/section/:${section.id}`} ><li key={key} onClick={handleToggle}>{section.name}</li> </NavLink> 
+                    })
+                  }
+
+                </ul>
+            </div>
             : 
             null
         }

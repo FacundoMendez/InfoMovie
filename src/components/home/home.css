@@ -3,33 +3,31 @@
     width: 100%;
     color: white;
     font-size: 3rem;
-    overflow: hidden;
     padding: 0 4rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10rem 0;
+    gap: 6rem;
 }
 
 .box_list{
     overflow: hidden;
     position: relative;
-    top: 10rem;
     padding: 2rem 2.5rem;
-    height: 40rem;
+    height: 42rem;
     width: 100%;
 }
 
 .box_list h2{
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     font-size: 3rem;
     letter-spacing: 1px;
     padding-left: 2rem;
 }
 
-.slider_cards{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    position: relative;
-}
 
 
 @media screen and (max-width:600px) {
