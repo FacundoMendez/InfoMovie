@@ -99,7 +99,7 @@ const Nav = () => {
                 <ul>
                   {
                     sectionsData.map((section, key) => {
-                      return <NavLink to={`/section/:${section.id}`} ><li key={key} onClick={handleToggle}>{section.name}</li> </NavLink> 
+                      return <a  href={`/section/:${section.id}`} ><li key={key} onClick={handleToggle}>{section.name}</li> </a> 
                     })
                   }
 

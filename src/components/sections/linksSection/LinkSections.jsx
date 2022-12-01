@@ -13,15 +13,12 @@ const LinkSections = () => {
     const [movieList , setMovieList] = useState([])
     const [paginationCount , setPaginationCount] = useState(1)
     const [loading , setLoading] = useState(false)
-  
-    let paginationA = paginationCount
 
     let id = roomId.replace(/:/, '');
 
-      console.log(id)
-  
     useEffect(() => {
-      const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US&with_genres=${id}&page=${paginationA}`
+
+      const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US&with_genres=${id}&page=${paginationCount}`
   
       axios.get(endPoint)
         .then( res =>{
@@ -29,7 +26,7 @@ const LinkSections = () => {
           setLoading(true)
           setMovieList(apiData.results)
         })
-    }, [paginationA , id])
+    }, [paginationCount , id , roomId])
 
 
     
