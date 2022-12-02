@@ -3,9 +3,9 @@ import "./cardMovie.css"
 
 
 
-const CardMovie = ({ movie , key}) => {
+const CardMovie = ({ movie }) => {
   return (
-        <div className="cardMovie" id={key} >
+        <div className="cardMovie" >
             <img src={movie} alt="img movie" />
         </div>
   )

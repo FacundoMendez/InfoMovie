@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const ApiHome = ({movieName, movieId ,key}) => {
+const ApiHome = ({movieName, movieId}) => {
 
   const [movieList , setMovieList] = useState([])
 
@@ -89,8 +89,8 @@ const ApiHome = ({movieName, movieId ,key}) => {
         <h2>{movieName}</h2>
          <Slider {...settings}>
             {
-                movieList.map((movie, index) => {
-                    return <CardMovie key={index} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+                movieList.map((movie, key) => {
+                    return <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
                 })
             }
         </Slider>
