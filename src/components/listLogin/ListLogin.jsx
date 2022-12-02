@@ -2,7 +2,7 @@
 import {  Navigate } from 'react-router-dom'
 import "./listLogin.css"
 
-import imgPrueba from "../assets/blur-colors.png"
+
 
 const ListLogin = () => {
 

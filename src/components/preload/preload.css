@@ -1,0 +1,30 @@
+.preload{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999 !important;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.line_preload{
+    top: 0rem;
+    width: 0%;
+    opacity: 0;
+    position: relative;
+    height: .30rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;    
+    background-image: linear-gradient(90deg,#000 16.66666%,#c077f0 33.33333%,#aee8fa 50%,#68bde7 66.66666%,#6bd490 83.33333%,#000);
+    background-repeat: no-repeat;
+    background-size: 85%;
+    animation: animate 3.5s linear infinite;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}

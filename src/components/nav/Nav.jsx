@@ -57,7 +57,7 @@ const Nav = () => {
 
   },[])
 
-  console.log(sectionsData)
+/*   console.log(sectionsData) */
 
 
   return (
@@ -95,7 +95,7 @@ const Nav = () => {
         {isActive ? 
             <div className='list_nav' >
               <div className="box_links_nav">
-                <NavLink className="linkHome_despl" to="/" onClick={handleToggle}>
+                  <NavLink className="linkHome_despl" to="/" onClick={handleToggle}>
                     Home
                   </NavLink>
                   <hr className='list_hr' />
@@ -103,13 +103,13 @@ const Nav = () => {
                     <a  href={`/trending`} ><li  onClick={handleToggle}>Trending</li> </a> 
                     {
                       sectionsData.map((section, key) => {
-                        return <a  href={`/section/:${section.id}`} ><li key={key} onClick={handleToggle}>{section.name}</li> </a> 
+                        return <a key={key} href={`/section/:${section.id}`} ><li key={key} id={key}  onClick={handleToggle}>{section.name}</li> </a> 
                       })
                     }
 
                   </ul>
+                </div>
               </div>
-            </div>
             : 
             null
         }

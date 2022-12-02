@@ -38,7 +38,7 @@
     height: 50%;
     position: absolute;
     z-index: 2000 !important;
-    top: 28rem;
+    top: 30rem;
     left: 2%;
     transform: translate(0 , -50%);
     display: flex;
@@ -75,6 +75,7 @@
     padding: .6rem 2rem;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
+    border: 1px solid rgba(255, 255, 255, 0.322);
 }
 
 .button_moreInfo p{

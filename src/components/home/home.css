@@ -29,6 +29,27 @@
     padding-left: 2rem;
 }
 
+.button_top_home{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 15px;
+    background: linear-gradient(90deg, rgba(183,84,224,1) 2%, rgba(0,255,188,1) 100%);
+    width: 5rem;
+    height: 5rem;
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:  0 0 10px black inset;
+}
+
+.button_top_home img{
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+    filter: drop-shadow( 0 0 2px black);
+}
 
 
 @media screen and (max-width:600px) {

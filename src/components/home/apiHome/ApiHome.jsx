@@ -85,12 +85,12 @@ const ApiHome = ({movieName, movieId ,key}) => {
   };
 
   return (
-    <div className="box_list" key={key}>
+    <div className="box_list">
         <h2>{movieName}</h2>
          <Slider {...settings}>
             {
-                movieList.map((movie, inx) => {
-                    return <CardMovie key={inx} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                movieList.map((movie, index) => {
+                    return <CardMovie key={index} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
                 })
             }
         </Slider>

@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CardsSection = ({ movie , key}) => {
+const CardsSection = ({ movie , id}) => {
   return (
-    <div className="cardMovie_sections" key={key}>
+    <div className="cardMovie_sections" id={id}>
         <img src={movie} alt="img movie" />
     </div>
   )

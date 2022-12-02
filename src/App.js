@@ -4,10 +4,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { lazy , Suspense} from 'react';
 import Spinner from './components/assets/spinner/Spinner';
 import TrendingSection from './components/sections/linksSection/TrendingSection';
+import Home from './components/home/Home';
 
 const LinkSections = lazy(() => import('./components/sections/linksSection/LinkSections'))
 const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
-const Home = lazy(() => import('./components/home/Home'))
 
 
 
