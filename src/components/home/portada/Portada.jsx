@@ -21,7 +21,6 @@ const Portada = () => {
 
     }, [setPortadaMovie])
 
-    console.log(portadaMovie)
 
 
     const settings = {

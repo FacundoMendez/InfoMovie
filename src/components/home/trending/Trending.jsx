@@ -22,8 +22,6 @@ const Trending = () => {
     }, [setMovieList])
 
 
-    console.log(movieList)
-
     const settings = {
         dots: true,
         infinite: true,
