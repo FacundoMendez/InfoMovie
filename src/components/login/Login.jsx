@@ -48,7 +48,7 @@ const Login = ({handleToggleLogin , setLoginConnected}) => {
                   })
 
                   const token = res.data.token
-                  localStorage.setItem("token" , token)
+                  sessionStorage.setItem("token" , token)
                   navigate("/listUser")
                   setLoginConnected(true)
             })
@@ -62,11 +62,11 @@ const Login = ({handleToggleLogin , setLoginConnected}) => {
       <form className='form' onSubmit={(submitHandler)}>
         <label className='label_form'>
             <span>Email:</span>
-            <input type="text" name='email'  />
+            <input type="text" name='email' placeholder='challenge@alkemy.org' />
         </label>
         <label className='label_form'>
             <span>Password:</span>
-            <input type="password"   name='password'  />
+            <input type="password" placeholder='react'  name='password'  />
         </label>
         <button className='buttonSubmit-login' type='submit'>Log In</button>
       </form>

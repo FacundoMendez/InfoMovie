@@ -17,7 +17,7 @@ const Home = () => {
       <Trending/>
       {
         nameSection.map((movieSection, key) => {
-          return <ApiHome  movieName={movieSection.name} movieId={movieSection.id} key={key}/>
+          return  <ApiHome  movieName={movieSection.name} movieId={movieSection.id} key={key}/>
         })
       }
       <a href="# " >

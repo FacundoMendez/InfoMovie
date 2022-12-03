@@ -2,7 +2,6 @@ import React from 'react'
 import "./cardMovie.css"
 
 
-
 const CardMovie = ({ movie }) => {
   return (
         <div className="cardMovie" >

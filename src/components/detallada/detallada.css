@@ -1,0 +1,154 @@
+.detallada{
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    font-size: 3rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15rem ;
+    gap: 4rem;
+}
+
+.portada_detallada{
+    position: relative;
+    width: 100%;
+    height: 85rem;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 1000;
+    top: 5.5rem;
+    margin-bottom: 5rem;
+}
+
+.blur_portada_detallada{
+    position: absolute;
+    width: 100.5%;
+    height: 85.5rem;
+    box-shadow: 0 0 12px 34px rgba(0, 0, 0, 0.993) inset;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+}
+
+
+/* title card container */
+
+.container_portada{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    width: 80rem;
+    height:90%;
+    top: 50%;
+    left: 0%;
+    gap: 6rem;
+    transform: translate(0 , -50%);
+}
+
+
+/* title */
+
+.portada_title_detallada{
+    font-size: 3.8rem;
+    color: white;
+    letter-spacing: 1px;
+    position: relative;
+    text-shadow: 0 0 30px black;
+    filter: drop-shadow(0 0 3px black);
+    text-align: center;
+    width: 80%;
+    text-transform: uppercase;
+}
+
+
+/* portada */
+
+
+
+.img_back_portada{
+    object-fit: cover;
+    object-position: 0 15%;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    filter: contrast(105%) brightness(105%);
+}
+
+
+/* card */
+
+.portada_card_detallada{
+    border-radius: 2px;
+    width: 27.45rem;
+    height: 41rem;
+    position: relative;
+    border: 2px solid white;
+    background-color: rgba(0, 0, 0, 0.445);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 40px black;
+    filter: contrast(102%) brightness(102%) drop-shadow( 0 0 10px black);
+}
+
+.img_front_portada{
+    object-fit: contain;
+    object-position: center;
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 40px black;
+    position: relative;
+    filter: contrast(105%) brightness(105%);
+}
+
+/* rating */
+
+.rating_card_green{
+    position: absolute;
+    border: 2px solid rgb(104, 255, 179);
+    border-radius: 100%;
+    padding: 1.2rem;
+    font-size: 1.9rem;
+    top: -1rem;
+    right: -1rem;
+    background-color: black;
+    box-shadow: 0 0 40px black;
+
+}
+
+
+.rating_card_orange{
+    position: absolute;
+    border: 2px solid rgb(255, 202, 104);
+    border-radius: 100%;
+    padding: 1.2rem;
+    font-size: 1.9rem;
+    top: -1rem;
+    right: -1rem;
+    background-color: black;
+    box-shadow: 0 0 40px black;
+
+}
+
+.rating_card_red{
+    position: absolute;
+    border: 2px solid rgb(255, 104, 104);
+    border-radius: 100%;
+    padding: 1.2rem;
+    font-size: 1.9rem;
+    top: -1rem;
+    right: -1rem;
+    background-color: black;
+    box-shadow: 0 0 40px black;
+}
+
+
+
+
+
+

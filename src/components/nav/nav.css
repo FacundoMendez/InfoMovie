@@ -10,8 +10,9 @@
     align-items: center;
     transition: all .4s ease;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.932);
+    background-color: rgba(0, 0, 0, 0.973);
 }
+
 
 
 .lineNav{

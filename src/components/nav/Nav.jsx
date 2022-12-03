@@ -102,9 +102,12 @@ const Nav = () => {
                   <ul>
                     <a  href={`/trending`} ><li  onClick={handleToggle}>Trending</li> </a> 
                     {
-                      sectionsData.map((section, key) => {
-                        return <a key={key} href={`/section/:${section.id}`} ><li key={key} id={key}  onClick={handleToggle}>{section.name}</li> </a> 
-                      })
+                        sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
+                          return <a key={key} href={`/section/:${section.id}`} >
+                              <li key={key} id={key}  onClick={handleToggle}>{section.name}</li> 
+                            
+                            </a> 
+                          })
                     }
 
                   </ul>

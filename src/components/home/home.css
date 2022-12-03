@@ -3,23 +3,21 @@
     width: 100%;
     color: white;
     font-size: 3rem;
-    padding: 0 4rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 10rem 0 ;
-    margin-top: 8rem;
+    margin-bottom: 15rem ;
     gap: 4rem;
 }
 
 .box_list{
     overflow: hidden;
     position: relative;
-    padding: 2rem 2.5rem;
+    padding: 2rem 4rem;
     height: 42rem;
-    width: 100%;
+    width: 95%;
 }
 
 .box_list h2{

@@ -3,7 +3,7 @@ import "./sectionsStyle.css"
 import axios from 'axios'
 import CardsSection from '../CardsSection'
 import Pagination from '../componentsSection/pagination/Pagination'
-import { useParams } from 'react-router-dom'
+import { NavLink, useParams } from 'react-router-dom'
 import Spinner from '../../assets/spinner/Spinner'
 
 
@@ -38,7 +38,7 @@ const LinkSections = () => {
                 <div className="box_list_sections">
                     {
                         movieList.map((movie, key) => {
-                            return <CardsSection key={key} id={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                            return <NavLink key={key} to={`/:${movie.id}`}><CardsSection key={key} id={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/></NavLink>
                         })
                     }
                 </div>

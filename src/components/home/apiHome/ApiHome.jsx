@@ -4,6 +4,7 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from 'react-router-dom';
 
 const ApiHome = ({movieName, movieId}) => {
 
@@ -11,7 +12,7 @@ const ApiHome = ({movieName, movieId}) => {
 
 
   useEffect(() => {
-    const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US&with_genres=${movieId}&`
+    const endPoint = `https://api.themoviedb.org/3/discover/movie?api_key=d37072b0437145eb49f3db14ffeeda76&original_language=en-US&with_genres=${movieId}&`
 
     axios.get(endPoint)
       .then( res =>{
@@ -90,7 +91,7 @@ const ApiHome = ({movieName, movieId}) => {
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+                    return <NavLink key={key} to={`/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
                 })
             }
         </Slider>

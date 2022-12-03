@@ -4,6 +4,7 @@ import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from 'react-router-dom';
 
 const Trending = () => {
 
@@ -82,13 +83,15 @@ const Trending = () => {
         ]
     };
 
+
+  console.log(movieList)
   return (
     <div className="box_list">
         <h2>Trending</h2>
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/>
+                    return <NavLink key={key} to={`/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
                 })
             }
         </Slider>
