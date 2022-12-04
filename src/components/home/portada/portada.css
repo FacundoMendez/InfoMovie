@@ -40,7 +40,7 @@
     position: absolute;
     z-index: 2000 !important;
     top: 33rem;
-    left: 2.5%;
+    left: 4.5%;
     transform: translate(0 , -50%);
     display: flex;
     justify-content: center;

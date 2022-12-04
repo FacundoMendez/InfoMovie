@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react'
-import CardMovie from '../../cardMovie/CardMovie'
+import CardMovie from '../cardMovie/CardMovie'
 import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from 'react-router-dom';
 
-const ApiHome = ({movieName, movieId}) => {
+const ApiMovieHome = ({movieName, movieId}) => {
 
   const [movieList , setMovieList] = useState([])
 
@@ -91,7 +91,7 @@ const ApiHome = ({movieName, movieId}) => {
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return <NavLink key={key} to={`/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
+                    return <NavLink key={key} to={`/movie/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
                 })
             }
         </Slider>
@@ -99,4 +99,4 @@ const ApiHome = ({movieName, movieId}) => {
   )
 }
 
-export default ApiHome
+export default ApiMovieHome

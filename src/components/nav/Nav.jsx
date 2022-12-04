@@ -53,11 +53,12 @@ const Nav = () => {
         .then(res => {
           const apiData = res.data
           setSectionsData(apiData.genres)
+
         })
 
   },[])
 
-/*   console.log(sectionsData) */
+  console.log(sectionsData)
 
 
   return (

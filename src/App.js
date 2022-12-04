@@ -5,7 +5,8 @@ import { lazy , Suspense} from 'react';
 import Spinner from './components/assets/spinner/Spinner';
 import TrendingSection from './components/sections/linksSection/TrendingSection';
 import Home from './components/home/Home';
-import Detallada from './components/detallada/Detallada';
+import DetalladaMovie from './components/detallada/DetalladaMovie';
+import DetalladaTv from './components/detallada/DetalladaTv';
 
 const LinkSections = lazy(() => import('./components/sections/linksSection/LinkSections'))
 const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
@@ -21,7 +22,9 @@ function App() {
           <Route exact path='/listUser' element = {<ListLogin/>} />
           <Route exact path='/section/:roomId' element = {<LinkSections/>} />
           <Route exact path='/trending' element = {<TrendingSection/>} />
-          <Route exact path='/:id' element = {<Detallada/>} />
+          <Route exact path='/movie/:id' element = {<DetalladaMovie/>} />
+          <Route exact path='/tv/:idTv' element = {<DetalladaTv/>} />
+
           <Route exact path='/' element = {<Home/>} />
         </Routes>
       </Suspense>

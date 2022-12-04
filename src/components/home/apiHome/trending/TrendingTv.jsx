@@ -6,12 +6,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from 'react-router-dom';
 
-const Trending = () => {
+const TrendingTv = () => {
 
     const [movieList , setMovieList] = useState([])
 
     useEffect(() => {
-      const endPoint = "https://api.themoviedb.org/3/trending/all/week?api_key=d37072b0437145eb49f3db14ffeeda76"
+      const endPoint = "https://api.themoviedb.org/3/trending/tv/week?api_key=d37072b0437145eb49f3db14ffeeda76"
 
       axios.get(endPoint)
         .then( res =>{
@@ -84,19 +84,19 @@ const Trending = () => {
     };
 
 
-  console.log(movieList)
   return (
     <div className="box_list">
-        <h2>Trending</h2>
+        <h2>Top series</h2>
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return <NavLink key={key} to={`/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
+                    return <NavLink key={key} to={`/tv/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
                 })
             }
         </Slider>
+
     </div>
   )
 }
 
-export default Trending
+export default TrendingTv

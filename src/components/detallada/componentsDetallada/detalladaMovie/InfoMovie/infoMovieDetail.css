@@ -1,0 +1,81 @@
+.infoMovieDetail{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+    gap: 2rem;
+    top: -10rem;
+}
+
+.synopsis_title{
+    font-size: 3.5rem;
+    letter-spacing: 1px;
+    outline: none;
+}
+
+.infoMovieDetail p{
+    font-size: 2rem;
+    width: 75%;
+    letter-spacing: 1px;
+    outline: none;
+    line-height: 2.7rem;
+
+}
+
+.box_providers{
+    top: 3rem;
+    position: relative;
+    padding: 2rem 4rem;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    background-color: rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+}
+
+.select_change_lang{
+    width: 11rem;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    border-radius: 3px;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.box_img_prover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+    position: relative;
+}
+
+.img_provider{
+    object-fit: contain;
+    width: 8rem;
+    border-radius: 10px;
+    filter: contrast(105%) brightness(110%);
+    user-select: none;
+    pointer-events: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.308);
+
+}
+
+.available_provider{
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+
+}

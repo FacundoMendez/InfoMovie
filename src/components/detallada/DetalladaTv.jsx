@@ -4,20 +4,21 @@ import "./detallada.css"
 import axios from 'axios'
 import Spinner from '../assets/spinner/Spinner'
 import Swal from 'sweetalert2'
-import PortadaDetallada from './componentsDetallada/PortadaDetallada'
-import Reparto from './componentsDetallada/reparto/Reparto'
+import InfoTvDetail from './componentsDetallada/detalladaTv/InfoTv/InfoTvDetail'
+import RepartoTv from './componentsDetallada/detalladaTv/repartoTv/RepartoTv'
+import PortadaTvDetallada from './componentsDetallada/detalladaTv/portadaTv/PortadaTvDetallada'
 
-const Detallada = () => {
+const DetalladaTv = () => {
 
-    const {id}= useParams()
+    const {idTv}= useParams()
     
-    let idMovie = id.replace(/:/, '');
+    let idMovie = idTv.replace(/:/, '');
     const [loading , setLoading] = useState(false)
 
     const [movie , setMovie] = useState([])
 
     useEffect(() => {
-        const endpoint = `https://api.themoviedb.org/3/movie/${idMovie}?api_key=d37072b0437145eb49f3db14ffeeda76`
+        const endpoint = `https://api.themoviedb.org/3/tv/${idMovie}?api_key=d37072b0437145eb49f3db14ffeeda76`
 
         axios.get(endpoint)
             .then(res => {
@@ -36,11 +37,11 @@ const Detallada = () => {
                     window.location.href = "/"
                 }, 2500);
 
-
             })                 
     }, [setMovie , setLoading])
 
     console.log(movie)
+
     
     if(movie.backdrop_path === null || movie.poster_path === null){
         Swal.fire({
@@ -58,9 +59,9 @@ const Detallada = () => {
     <>
         {loading &&  movie.poster_path !== null ?
             <div className="detallada">
-                <PortadaDetallada movie={movie} />
-
-                <Reparto idMovie={idMovie} />
+                <PortadaTvDetallada movie={movie} />
+                <InfoTvDetail idMovie={idMovie}  movie={movie}/>
+                <RepartoTv idMovie={idMovie} />
             </div>
         :
             <Spinner/>
@@ -69,4 +70,4 @@ const Detallada = () => {
   )
 }
 
-export default Detallada
+export default DetalladaTv

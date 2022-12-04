@@ -51,10 +51,7 @@ const nameSection = ([
     name: "Mystery",
     id: "9648"
   },
-/*   {
-    name: "Romance",
-    id: "10749"
-  }, */
+
   {
     name: "Science Fiction",
     id: "878"

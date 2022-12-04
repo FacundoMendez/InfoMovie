@@ -9,7 +9,7 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 15rem ;
-    gap: 4rem;
+    gap: 15rem;
 }
 
 .portada_detallada{
@@ -42,7 +42,7 @@
     align-items: center;
     flex-direction: column;
     position: absolute;
-    width: 80rem;
+    width: 70rem;
     height:90%;
     top: 50%;
     left: 0%;
