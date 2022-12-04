@@ -76,7 +76,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
                             }
                         </div>
                       :
-                      null
+                      <p>Opss.. information not available</p>
                   }
                </div>
        </div>

@@ -10,12 +10,12 @@ const Preload = () => {
 
         tl.to(".line_preload",{
             opacity:1,
-            duration:2,
+            duration:1.5,
             width:"50%"
         })
 
         tl.to(".preload",{
-            delay:1,
+            delay:.5,
             zIndex: -1 ,
             opacity:0,
 

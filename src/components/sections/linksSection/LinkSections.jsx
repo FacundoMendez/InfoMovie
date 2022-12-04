@@ -38,7 +38,7 @@ const LinkSections = () => {
                 <div className="box_list_sections">
                     {
                         movieList.map((movie, key) => {
-                            return <NavLink key={key} to={`/:${movie.id}`}><CardsSection key={key} id={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/></NavLink>
+                            return <NavLink key={key} to={`/movie/:${movie.id}`}><CardsSection key={key} id={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/></NavLink>
                         })
                     }
                 </div>

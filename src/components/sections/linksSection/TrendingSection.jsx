@@ -16,7 +16,7 @@ const TrendingSection = () => {
 
     useEffect(() => {
 
-      const endPoint = `https://api.themoviedb.org/3/trending/all/week?api_key=d37072b0437145eb49f3db14ffeeda76&page=${paginationCount}`
+      const endPoint = `https://api.themoviedb.org/3/trending/movie/week?api_key=d37072b0437145eb49f3db14ffeeda76&page=${paginationCount}`
       
       axios.get(endPoint)
         .then( res =>{
@@ -33,7 +33,7 @@ const TrendingSection = () => {
                 <div className="box_list_sections">
                     {
                         movieList.map((movie, key) => {
-                            return <NavLink key={key} to={`/:${movie.id}`}><CardsSection key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/></NavLink>
+                            return <NavLink key={key} to={`/movie/:${movie.id}`}><CardsSection key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/></NavLink>
                         })
                     }
                 </div>
