@@ -55,8 +55,30 @@ const InfoTvDetail = ({idMovie , movie}) => {
     <>
 
        <div className="infoMovieDetail">
+
+
            <h2 className='synopsis_title'>Synopsis</h2>
            <p>{movie.overview}</p>
+
+            <div className="container_info">
+
+                <div className="temporadas">
+                    <h2 className='temporada_title'>Seasons</h2>
+
+                    <div className="box_temporadas">
+                        <div className="cardSeason">{movie.seasons.map((season, indx) => {
+                                return <div key={indx} className="contain_cards_seasons">
+                                            <p className='titleSeason'>{season.name} <br /> </p> 
+                                            <p className='episodesSeason'>{season.episode_count} episodes</p>
+                                            <img className='img_season'  src={`https://image.tmdb.org/t/p/original${season.poster_path}`}  alt="imgSeason" />
+                                        </div> 
+                            })}
+                        
+                        </div>
+                    </div>
+
+
+                </div>
             
                <div className="box_providers">
                     <h2 className='available_provider'>Available in:</h2>
@@ -66,6 +88,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
                            <option key={key} value={option.value}>{option.label}</option>
                        ))}
                    </select>
+
                    {!errorSection && movieInfo !== undefined ? 
 
                         <div className="box_img_prover">
@@ -79,6 +102,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
                       <p>Opss.. information not available</p>
                   }
                </div>
+            </div>
        </div>
     
     </>

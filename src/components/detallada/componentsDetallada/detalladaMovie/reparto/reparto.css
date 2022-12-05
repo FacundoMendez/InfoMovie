@@ -11,9 +11,9 @@
 .title_reparto{
     font-size: 3rem;
     position: relative;
-    left: 2rem;
     margin-bottom: 2rem;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .box_user_reparto{

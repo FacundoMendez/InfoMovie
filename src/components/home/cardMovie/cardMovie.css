@@ -3,7 +3,6 @@
 
 .cardMovie{
     border: 2px solid rgba(255, 255, 255, 0.253);
-    width: 23.5rem; 
     height: 31rem;
     border-radius: 10px;
     cursor: pointer;
@@ -23,7 +22,6 @@
 
 @media screen and (max-width:1700px) {
     .cardMovie{
-        width: 21rem; 
         height: 30rem;
     }
 
@@ -34,10 +32,7 @@
 
 
 @media screen and (max-width:1440px) {
-    .cardMovie{
-        width: 21rem; 
-        height: 30rem;
-    }
+
 
     .cardMovie img{
         object-fit: cover;
@@ -46,7 +41,6 @@
 
 @media screen and (max-width:1230px) {
     .cardMovie{
-        width: 18rem; 
         height: 28rem;
     }
 
@@ -59,7 +53,6 @@
 
 @media screen and (max-width:900px) {
     .cardMovie{
-        width: 21rem; 
         height: 28rem;
     }
 
@@ -70,7 +63,6 @@
 
 @media screen and (max-width:800px) {
     .cardMovie{
-        width: 19rem; 
         height: 26rem;
     }
 
@@ -78,7 +70,6 @@
 
 @media screen and (max-width:730px) {
     .cardMovie{
-        width: 16rem; 
         height: 26rem;
     }
 
@@ -87,7 +78,6 @@
 
 @media screen and (max-width:650px) {
     .cardMovie{
-        width: 19.5rem; 
         height: 29rem;
     }
 
@@ -95,7 +85,6 @@
 
 @media screen and (max-width:500px) {
     .cardMovie{
-        width: 17rem; 
         height: 26rem;
     }
 
@@ -103,7 +92,6 @@
 
 @media screen and (max-width:420px) {
     .cardMovie{
-        width: 15rem; 
         height: 26.5rem;
     }
 
@@ -111,7 +99,6 @@
 
 @media screen and (max-width:380px) {
     .cardMovie{
-        width: 20rem; 
         height: 28rem;
         margin: 0 auto;
     }

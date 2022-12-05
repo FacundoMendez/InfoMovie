@@ -9,7 +9,7 @@
     align-items: center;
     flex-direction: column;
     margin-bottom: 15rem ;
-    gap: 15rem;
+    gap: 5rem;
 }
 
 .portada_detallada{
@@ -151,4 +151,31 @@
 
 
 
+
+@media screen and (max-width:900px) {
+    
+
+    .blur_portada_detallada{
+        width: 100.5%;
+        box-shadow: 0 0 14px 5px rgba(0, 0, 0, 0.993) inset;
+    }
+    
+    
+    /* title card container */
+    
+    .container_portada{
+        width: 100%;
+        height:100%;
+    }
+    
+    
+    /* title */
+    
+    .portada_title_detallada{
+        font-size: 3rem;
+        width: 95%;
+    }
+    
+    
+}
 
