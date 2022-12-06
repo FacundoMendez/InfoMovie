@@ -14,27 +14,30 @@ import NameSectionTv from './apiHome/NameSectionTv'
 const Home = () => {
 
   return (
-    <div className='home'>
-      <Preload/>
-      <Portada/>
-      <TrendingMovies/>
-      <TrendingTv />
-      {
-        nameSection.map((movieSection, key) => {
-          return  <ApiMovieHome  movieName={movieSection.name} movieId={movieSection.id} key={key}/>
-        })
-      }
-      {
-        NameSectionTv.map((tvSection, key) => {
-          return  <ApiTvHome  movieName={tvSection.name} movieId={tvSection.id} key={key}/>
-        })
-      }
-      <a href="# " >
-        <div className="button_top_home">
-          <img src={arrowTop} alt="arrowTop" />
+  <>
+        <div className='home'>
+          {/* <Preload/> */}
+          <Portada/>
+          <TrendingMovies/>
+          <TrendingTv />
+          {
+            nameSection.map((movieSection, key) => {
+              return  <ApiMovieHome  movieName={movieSection.name} movieId={movieSection.id} key={key}/>
+            })
+          }
+          {
+            NameSectionTv.map((tvSection, key) => {
+              return  <ApiTvHome  movieName={tvSection.name} movieId={tvSection.id} key={key}/>
+            })
+          }
+          <a href="# " >
+            <div className="button_top_home">
+              <img src={arrowTop} alt="arrowTop" />
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
+
+  </>
   )
 }
 

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 import "../../detalladaMovie/InfoMovie/infoMovieDetail.css"
+import notFound from "../../../../assets/notFound.png"
 
 const InfoTvDetail = ({idMovie , movie}) => {
 
@@ -55,8 +56,6 @@ const InfoTvDetail = ({idMovie , movie}) => {
     <>
 
        <div className="infoMovieDetail">
-
-
            <h2 className='synopsis_title'>Synopsis</h2>
            <p>{movie.overview}</p>
 
@@ -70,14 +69,17 @@ const InfoTvDetail = ({idMovie , movie}) => {
                                 return <div key={indx} className="contain_cards_seasons">
                                             <p className='titleSeason'>{season.name} <br /> </p> 
                                             <p className='episodesSeason'>{season.episode_count} episodes</p>
-                                            <img className='img_season'  src={`https://image.tmdb.org/t/p/original${season.poster_path}`}  alt="imgSeason" />
+                                            {
+                                                season.poster_path !== null ?
+                                                    <img className='img_season'  src={`https://image.tmdb.org/t/p/original${season.poster_path}`}  alt="imgSeason" />
+                                                :
+                                                    <img className='img_season_notfound'  src={notFound}  alt="imgSeason" />
+                                            }
+                                            
                                         </div> 
                             })}
-                        
                         </div>
                     </div>
-
-
                 </div>
             
                <div className="box_providers">

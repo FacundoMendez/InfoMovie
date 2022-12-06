@@ -49,7 +49,7 @@ const Login = ({handleToggleLogin , setLoginConnected}) => {
 
                   const token = res.data.token
                   sessionStorage.setItem("token" , token)
-                  navigate("/listUser")
+                  navigate("/home")
                   setLoginConnected(true)
             })
     }

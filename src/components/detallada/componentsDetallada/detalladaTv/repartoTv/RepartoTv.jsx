@@ -24,24 +24,18 @@ const RepartoTv = ({idMovie}) => {
               
     }, [setMovie , setLoading])
 
+    console.log(movie)
+
 
     const settings = {
         infinite: true,
         speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         initialSlide: 0,
         className:"slider_cards_reparto",
         responsive: [
-          {
-            breakpoint: 1740,
-            settings: {
-              slidesToShow: 5,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
-            }
-          },
+   
           {
             breakpoint: 1440,
             settings: {
@@ -68,7 +62,7 @@ const RepartoTv = ({idMovie}) => {
           },
 
           {
-            breakpoint: 510,
+            breakpoint: 450,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
@@ -80,7 +74,7 @@ const RepartoTv = ({idMovie}) => {
 
   return (
     <>
-        {loading?
+        {loading ?
             <div className="reparto">
                 <h2 className='title_reparto'>Distribution</h2>
 

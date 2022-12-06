@@ -94,7 +94,16 @@
     filter: contrast(110%) brightness(110%);
     box-shadow: 0 0 10px black;
     z-index: 2;
+}
 
+.img_season_notfound{
+    object-fit: contain;
+    width: 16rem;
+    height: 24rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    filter: drop-shadow(0 0 10px black);
+    z-index: 2; 
 }
 
 .cardSeason{

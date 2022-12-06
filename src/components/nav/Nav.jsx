@@ -2,36 +2,39 @@ import React, { useEffect , useState} from 'react'
 import "./nav.css"
 import gsap from 'gsap'
 import Login from '../login/Login';
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Search from './search/Search';
 import axios from 'axios';
 
+
+
 const Nav = () => {
 
-  const [loginConnected , setLoginConnected ] = useState([]) /* verify connected user */
+ 
   const [isActive, setActive] = useState(false); /* active nav */
-  const [isActiveLogin, setActiveLogin] = useState(false); /* active box login */
-
 
   const handleToggle = () => {
     setActive(!isActive);
   };
 
-  const handleToggleLogin = () => {
-    setActiveLogin(!isActiveLogin);
-  };
-
-
-  const navigate = useNavigate()
-
-  const handleDisconnectLogin = () => {
-    setLoginConnected(false);
-    localStorage.removeItem("token"); 
-    navigate("/")
-  };
-
 
   const [sectionsData, setSectionsData] = useState([]); /* active nav */
+  
+  const [loginConnected , setLoginConnected ] = useState(false) /* verify connected user */
+  const [isActiveLogin, setActiveLogin] = useState(false); /* active box login */
+
+    /* activa login */
+    const handleToggleLogin = () => {
+      setActiveLogin(!isActiveLogin);
+    };
+  
+  
+    /* desconecta el login (con el button) */
+  
+    const handleDisconnectLogin = () => {
+      setLoginConnected(false);
+      sessionStorage.removeItem("token"); 
+    };
   
 
   useEffect(() => {
@@ -42,11 +45,6 @@ const Nav = () => {
           width:"50%"
       })
   
-      if(localStorage.getItem("token") !== null){
-        setLoginConnected(true)
-      }
-
-
       const endpoint = "https://api.themoviedb.org/3/genre/movie/list?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US"
 
       axios.get(endpoint)
@@ -56,9 +54,13 @@ const Nav = () => {
 
         })
 
+      /* detecta si hay token de login */
+      
+      if(sessionStorage.getItem("token") !== null){
+        setLoginConnected(true)
+      }
   },[])
 
-  console.log(sectionsData)
 
 
   return (
@@ -73,6 +75,8 @@ const Nav = () => {
             <div className={ isActive ? "line line3_active" : "line line3"}></div>
         </div>
 
+
+        {/* modificar boton de login / login / logout */}
      
         {
           loginConnected !== true ? 
@@ -84,7 +88,9 @@ const Nav = () => {
               <p>Logout</p> 
             </div>
         }
+
     
+        {/* activar boton de login */}
 
         {isActiveLogin ? 
            <Login  handleToggleLogin={handleToggleLogin} setLoginConnected={setLoginConnected}/>
@@ -92,6 +98,8 @@ const Nav = () => {
             null
         }
 
+
+        {/* links de nav */}
 
         {isActive ? 
             <div className='list_nav' >
@@ -101,11 +109,11 @@ const Nav = () => {
                   </NavLink>
                   <hr className='list_hr' />
                   <ul>
-                    <a  href={`/trending`} ><li  onClick={handleToggle}>Trending</li> </a> 
+                    <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
                     {
                         sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
                           return <a key={key} href={`/section/:${section.id}`} >
-                              <li key={key} id={key}  onClick={handleToggle}>{section.name}</li> 
+                              <li key={key} onClick={handleToggle}>{section.name}</li> 
                             
                             </a> 
                           })
