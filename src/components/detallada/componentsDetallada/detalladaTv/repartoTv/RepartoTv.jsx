@@ -22,7 +22,7 @@ const RepartoTv = ({idMovie}) => {
                 setLoading(true)
             })
               
-    }, [setMovie , setLoading])
+    }, [setMovie , setLoading, idMovie])
 
     console.log(movie)
 

@@ -49,7 +49,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
             }
         }
               
-    }, [setMovieInfo, inputValue ])
+    }, [setMovieInfo, inputValue, idMovie ])
 
 
 

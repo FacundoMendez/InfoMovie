@@ -42,7 +42,7 @@ const DetalladaMovie = () => {
                 }, 2500);
 
             })                 
-    }, [setMovie , setLoading])
+    }, [setMovie , setLoading, idMovie])
 
     
     if(movie.backdrop_path === null || movie.poster_path === null){
@@ -61,11 +61,13 @@ const DetalladaMovie = () => {
   return (
     <>
         {context.loginConnected && loading &&  movie.poster_path !== null ?
+        <Suspense fallback={<Spinner/>}>
             <div className="detallada">
                 <PortadaDetallada movie={movie} />
                 <InfoMovieDetail idMovie={idMovie}  movie={movie}/>
                 <Reparto idMovie={idMovie} />
             </div>
+        </Suspense>
         :
             <Spinner/>
         }

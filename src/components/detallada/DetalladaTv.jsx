@@ -56,7 +56,7 @@ const DetalladaTv = () => {
 
             })             
             
-    }, [setMovie , setLoading])
+    }, [setMovie , setLoading, idMovie])
 
     
     if(movie.backdrop_path === null || movie.poster_path === null){
@@ -75,12 +75,13 @@ const DetalladaTv = () => {
   return (
     <>
         {context.loginConnected && loading &&  movie.poster_path !== null ?
-            <div className="detallada">
-                <PortadaTvDetallada movie={movie} />
-                <InfoTvDetail idMovie={idMovie}  movie={movie}/>
-                <RepartoTv idMovie={idMovie} />
-
-            </div>
+            <Suspense fallback={<Spinner/>}>
+                <div className="detallada">
+                    <PortadaTvDetallada movie={movie} />
+                    <InfoTvDetail idMovie={idMovie}  movie={movie}/>
+                    <RepartoTv idMovie={idMovie} />
+                </div>
+            </Suspense>
         :
             <Spinner/>
         }

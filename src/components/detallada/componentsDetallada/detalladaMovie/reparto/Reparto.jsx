@@ -22,7 +22,7 @@ const Reparto = ({idMovie}) => {
                 setLoading(true)
             })
               
-    }, [setMovie , setLoading])
+    }, [setMovie , setLoading, idMovie])
 
 
     const settings = {
