@@ -1,10 +1,13 @@
-import React from 'react'
+import { useContext} from 'react';
 import "./login.css"
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
+import Context from '../context/Context';
 
-const Login = ({handleToggleLogin , setLoginConnected}) => {
+const Login = () => {
+
+  const context = useContext(Context)
 
   const navigate = useNavigate()
 
@@ -38,19 +41,10 @@ const Login = ({handleToggleLogin , setLoginConnected}) => {
             .post("http://challenge-react.alkemy.org" ,{email,password})
             .then(res => {
                 
-                handleToggleLogin()
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'success',
-                    title: 'You started successfully',
-                    showConfirmButton: false,
-                    timer: 2000
-                  })
-
                   const token = res.data.token
                   sessionStorage.setItem("token" , token)
                   navigate("/home")
-                  setLoginConnected(true)
+                  context.setLoginConnected(true)
             })
     }
 
@@ -58,7 +52,7 @@ const Login = ({handleToggleLogin , setLoginConnected}) => {
   return (
   <>
     <div className="login">
-      <div className="login_back" onClick={() => handleToggleLogin()}></div>
+      <div className="login_back"></div>
       <form className='form' onSubmit={(submitHandler)}>
         <label className='label_form'>
             <span>Email:</span>

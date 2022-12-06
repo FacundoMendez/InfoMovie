@@ -27,7 +27,6 @@ const Preload = () => {
 
     },[])
 
-
   return (
     <div className="preload">
         <div className="line_preload"></div>

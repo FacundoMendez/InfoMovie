@@ -1,22 +1,38 @@
-import React, {lazy, Suspense, useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom'
+import React, {lazy, Suspense, useEffect, useState, useContext} from 'react'
+import { useParams , useNavigate} from 'react-router-dom'
 import "./detallada.css"
 import axios from 'axios'
 import Spinner from '../assets/spinner/Spinner'
 import Swal from 'sweetalert2'
-import RepartoTv from './componentsDetallada/detalladaTv/repartoTv/RepartoTv'
-import PortadaTvDetallada from './componentsDetallada/detalladaTv/portadaTv/PortadaTvDetallada'
+import Context from '../context/Context'
 
 const InfoTvDetail = lazy(() => import ("./componentsDetallada/detalladaTv/InfoTv/InfoTvDetail"))
+const PortadaTvDetallada = lazy(() => import ("./componentsDetallada/detalladaTv/portadaTv/PortadaTvDetallada"))
+const RepartoTv = lazy(() => import ("./componentsDetallada/detalladaTv/repartoTv/RepartoTv"))
+
+
 
 const DetalladaTv = () => {
+    const context = useContext(Context)
+    const navigate = useNavigate()
 
     const {idTv}= useParams()
-    
     let idMovie = idTv.replace(/:/, '');
-    const [loading , setLoading] = useState(false)
 
+    const [loading , setLoading] = useState(false)
     const [movie , setMovie] = useState([])
+
+
+
+    /*verifica si el usuario esta logeado   */
+
+    const verifyConnected = () => {
+        if (!context.loginConnected ){
+            navigate("/")
+        }
+    }
+    verifyConnected()
+
 
     useEffect(() => {
         const endpoint = `https://api.themoviedb.org/3/tv/${idMovie}?api_key=d37072b0437145eb49f3db14ffeeda76`
@@ -38,10 +54,9 @@ const DetalladaTv = () => {
                     window.location.href = "/"
                 }, 2500);
 
-            })                 
+            })             
+            
     }, [setMovie , setLoading])
-
-    console.log(movie)
 
     
     if(movie.backdrop_path === null || movie.poster_path === null){
@@ -56,15 +71,15 @@ const DetalladaTv = () => {
         }, 2500);
     }
 
+
   return (
     <>
-        {loading &&  movie.poster_path !== null ?
+        {context.loginConnected && loading &&  movie.poster_path !== null ?
             <div className="detallada">
                 <PortadaTvDetallada movie={movie} />
-                <Suspense fallback={<Spinner/>}>
-                    <InfoTvDetail idMovie={idMovie}  movie={movie}/>
-                </Suspense>
+                <InfoTvDetail idMovie={idMovie}  movie={movie}/>
                 <RepartoTv idMovie={idMovie} />
+
             </div>
         :
             <Spinner/>

@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Suspense} from 'react'
 import axios from 'axios'
 import "../../detalladaMovie/InfoMovie/infoMovieDetail.css"
 import notFound from "../../../../assets/notFound.png"
+import Spinner from '../../../../assets/spinner/Spinner'
 
 const InfoTvDetail = ({idMovie , movie}) => {
 
@@ -54,7 +55,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
 
   return (
     <>
-
+    <Suspense fallback={<Spinner/>}>
        <div className="infoMovieDetail">
            <h2 className='synopsis_title'>Synopsis</h2>
            <p>{movie.overview}</p>
@@ -106,6 +107,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
                </div>
             </div>
        </div>
+    </Suspense>
     
     </>
 

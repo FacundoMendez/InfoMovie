@@ -1,15 +1,15 @@
 import './App.css';
-import Nav from './components/nav/Nav';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { lazy , Suspense , useState , useEffect} from 'react';
 import Spinner from './components/assets/spinner/Spinner';
-import TrendingSection from './components/sections/linksSection/TrendingSection';
-import Home from './components/home/Home';
-import DetalladaMovie from './components/detallada/DetalladaMovie';
-import DetalladaTv from './components/detallada/DetalladaTv';
 import Context from './components/context/Context';
-import Login from './components/login/Login';
 
+const Home = lazy(() => import('./components/home/Home'))
+const Nav = lazy(() => import('./components/nav/Nav'))
+const DetalladaTv = lazy(() => import('./components/detallada/DetalladaTv'))
+const DetalladaMovie = lazy(() => import('./components/detallada/DetalladaMovie'))
+const TrendingSection = lazy(() => import('./components/sections/linksSection/TrendingSection'))
+const Login = lazy(() => import('./components/login/Login'))
 
 const LinkSections = lazy(() => import('./components/sections/linksSection/LinkSections'))
 const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
@@ -18,8 +18,22 @@ const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
 
 function App() {
 
+  const [loginConnected , setLoginConnected ] = useState([]) /* verify connected user */
+
+  useEffect(() => {
+
+      /* detecta si hay token de login */
+      
+    if(sessionStorage.getItem("token") !== null){
+      setLoginConnected(true)
+    }else{
+      setLoginConnected(false)
+    }
+
+  },[loginConnected])
 
   return (
+    <Context.Provider value={{setLoginConnected , loginConnected}}>
       <BrowserRouter>
         <Nav/>
 
@@ -32,12 +46,13 @@ function App() {
             <Route exact path='/movie/:id' element = {<DetalladaMovie/>} />
             <Route exact path='/tv/:idTv' element = {<DetalladaTv/>} />
 
-            <Route exact path='/' element = {<Login/>} />
             <Route exact path='/home' element = {<Home/>} />
+            <Route exact path='/' element = {<Login/>} />
           </Routes>
         </Suspense>
       
       </BrowserRouter>
+    </Context.Provider>
   );
 }
 

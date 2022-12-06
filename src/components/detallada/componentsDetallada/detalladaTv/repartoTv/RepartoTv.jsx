@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, Suspense} from 'react'
 import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
@@ -75,6 +75,8 @@ const RepartoTv = ({idMovie}) => {
   return (
     <>
         {loading ?
+           <Suspense fallback={<Spinner/>}>
+
             <div className="reparto">
                 <h2 className='title_reparto'>Distribution</h2>
 
@@ -97,8 +99,9 @@ const RepartoTv = ({idMovie}) => {
                     }) 
                 }
                 </Slider>
-
             </div>
+          </Suspense>
+          
         :
             <Spinner/>
         }
