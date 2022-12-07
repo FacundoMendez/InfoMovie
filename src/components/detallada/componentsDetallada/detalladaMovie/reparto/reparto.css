@@ -19,6 +19,8 @@
     left: 0;
     top: 0rem;
     background: transparent url("../../../../assets/noise.png") repeat 0 0;
+    filter: drop-shadow( 0 0 1px black);
+    opacity: .9;
     background-repeat: repeat;
     animation: _noiseAnim_judif_1 .2s infinite;
     width: 100%;
