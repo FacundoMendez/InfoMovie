@@ -62,7 +62,7 @@ const RepartoTv = ({idMovie}) => {
           },
 
           {
-            breakpoint: 450,
+            breakpoint: 650,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
@@ -76,10 +76,12 @@ const RepartoTv = ({idMovie}) => {
     <>
         {loading ?
            <Suspense fallback={<Spinner/>}>
+            <div className="container_reparto">
 
             <div className="reparto">
-                <h2 className='title_reparto'>Distribution</h2>
-
+                <div className="title_users">
+                  <h2 className='title_reparto'>Distribution</h2>
+                </div>
                 <Slider {...settings}>
                 {
                     movie.filter(movie => movie.known_for_department='Acting').map((reparto , inx) => {
@@ -100,6 +102,8 @@ const RepartoTv = ({idMovie}) => {
                 }
                 </Slider>
             </div>
+            </div>
+
           </Suspense>
           
         :

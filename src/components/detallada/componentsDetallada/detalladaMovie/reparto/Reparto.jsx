@@ -26,64 +26,59 @@ const Reparto = ({idMovie}) => {
 
 
     const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 6,
-        slidesToScroll: 6,
-        initialSlide: 0,
-        className:"slider_cards_reparto",
-        responsive: [
-          {
-            breakpoint: 1740,
-            settings: {
-              slidesToShow: 5,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 1440,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 3,
-              infinite: true,
-              dots: true
-            }
-          },
-          {
-            breakpoint: 1150,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-            }
-          },
-
-          {
-            breakpoint: 800,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-            }
-          },
-
-          {
-            breakpoint: 510,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      initialSlide: 0,
+      className:"slider_cards_reparto",
+      responsive: [
+ 
+        {
+          breakpoint: 1440,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
           }
-        ]
-    };
+        },
+        {
+          breakpoint: 1150,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        },
 
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+
+        {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+  };
 
   return (
     <>
         {loading?
           <Suspense fallback={<Spinner/>}>
+            <div className="container_reparto">
+
             <div className="reparto">
-                <h2 className='title_reparto'>Distribution</h2>
+                <div className="title_users">
+                  <h2 className='title_reparto'>Distribution</h2>
+                </div>
                 <Slider {...settings}>
                 {
                     movie.filter(movie => movie.known_for_department='Acting').map((reparto , inx) => {
@@ -104,6 +99,8 @@ const Reparto = ({idMovie}) => {
                 }
                 </Slider>
             </div>
+            </div>
+
         </Suspense>
 
         :

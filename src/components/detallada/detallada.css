@@ -1,6 +1,7 @@
 .detallada{
     min-height: 100vh;
     width: 100%;
+    position: relative;
     color: white;
     font-size: 3rem;
     overflow: hidden;
@@ -8,8 +9,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 15rem ;
-    gap: 5rem;
 }
 
 .portada_detallada{
@@ -21,6 +20,7 @@
     z-index: 1000;
     top: 5.5rem;
     margin-bottom: 5rem;
+    box-shadow: 0 0 20px 34px rgba(0, 0, 0, 0.962) ;
 }
 
 .blur_portada_detallada{
@@ -69,7 +69,6 @@
 /* portada */
 
 
-
 .img_back_portada{
     object-fit: cover;
     object-position: 0 15%;
@@ -93,6 +92,10 @@
     backdrop-filter: blur(3px);
     box-shadow: 0 0 40px black;
     filter: contrast(102%) brightness(102%) drop-shadow( 0 0 10px black);
+    border-image: linear-gradient( #7928CA,#ff0080d5) 60;
+    border-width: 5px;
+    border-style: solid;
+    
 }
 
 .img_front_portada{
@@ -112,13 +115,12 @@
     position: absolute;
     border: 2px solid rgb(104, 255, 179);
     border-radius: 100%;
-    padding: 1.2rem;
+    padding: 1.5rem;
     font-size: 1.9rem;
-    top: -1rem;
-    right: -1rem;
+    top: -2.5rem;
+    right: -2rem;
     background-color: black;
     box-shadow: 0 0 40px black;
-
 }
 
 
@@ -149,11 +151,50 @@
 
 
 
+@keyframes _noiseAnim_judif_1 {
+    0% {
+        background-position: 0 0
+    }
 
+    10% {
+        background-position: -5% -5%
+    }
+
+    20% {
+        background-position: -10% 5%
+    }
+
+    30% {
+        background-position: 5% -10%
+    }
+
+    40% {
+        background-position: -5% 15%
+    }
+
+    50% {
+        background-position: -10% 5%
+    }
+
+    60% {
+        background-position: 15% 0
+    }
+
+    70% {
+        background-position: 0 10%
+    }
+
+    80% {
+        background-position: -15% 0
+    }
+
+    90% {
+        background-position: 10% 5%
+    }
+}
 
 
 @media screen and (max-width:900px) {
-    
 
     .blur_portada_detallada{
         width: 100.5%;

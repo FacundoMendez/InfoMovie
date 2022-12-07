@@ -58,7 +58,7 @@ const InfoTvDetail = ({idMovie , movie}) => {
     <Suspense fallback={<Spinner/>}>
        <div className="infoMovieDetail">
            <h2 className='synopsis_title'>Synopsis</h2>
-           <p>{movie.overview}</p>
+           <p className='text_sinapsis'>{movie.overview}</p>
 
             <div className="container_info">
 

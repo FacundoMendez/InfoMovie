@@ -78,8 +78,9 @@ const DetalladaTv = () => {
             <Suspense fallback={<Spinner/>}>
                 <div className="detallada">
                     <PortadaTvDetallada movie={movie} />
-                    <InfoTvDetail idMovie={idMovie}  movie={movie}/>
                     <RepartoTv idMovie={idMovie} />
+                    <InfoTvDetail idMovie={idMovie}  movie={movie}/>
+
                 </div>
             </Suspense>
         :

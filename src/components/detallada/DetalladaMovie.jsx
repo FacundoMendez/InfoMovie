@@ -64,8 +64,8 @@ const DetalladaMovie = () => {
         <Suspense fallback={<Spinner/>}>
             <div className="detallada">
                 <PortadaDetallada movie={movie} />
-                <InfoMovieDetail idMovie={idMovie}  movie={movie}/>
                 <Reparto idMovie={idMovie} />
+                <InfoMovieDetail idMovie={idMovie}  movie={movie}/>
             </div>
         </Suspense>
         :
