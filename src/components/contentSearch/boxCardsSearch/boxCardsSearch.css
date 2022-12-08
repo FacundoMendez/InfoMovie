@@ -1,0 +1,40 @@
+.boxCardSearch{
+    border: 2px solid red;
+    width: 70%;
+    height: 30rem;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+    padding-right: 10rem;
+}
+
+.img_search{
+    object-fit: contain;
+    width: 19.7rem;
+    border-radius: 10px;
+}
+
+.box_info_search{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+}
+
+.box_info_search h2{
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+
+.box_info_search p{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 2.rem; 
+}

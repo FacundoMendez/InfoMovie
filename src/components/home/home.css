@@ -17,7 +17,7 @@
     position: relative;
     padding: 2rem 4rem;
     height: 42rem;
-    width: 90%;
+    width: 89% !important;
 }
 
 .box_list h2{
@@ -49,6 +49,14 @@
     filter: drop-shadow( 0 0 2px black);
 }
 
+.slick-slide > div {
+    margin: 0 10px;
+  }
+  
+  .slick-list {
+    margin: 0 -10px;
+  }
+  
 
 @media screen and (max-width:1700px) {
     .box_list{

@@ -1,7 +1,7 @@
 .portada{
     position: relative;
     width: 100%;
-    height: 87rem;
+    height: 89rem;
     overflow: hidden;
     border-radius: 10px;
     z-index: 500;
@@ -12,8 +12,8 @@
 .blur_portada{
     position: absolute;
     width: 100.5%;
-    height: 89rem;
-    box-shadow: 0 0 17px 34px rgba(0, 0, 0, 0.993) inset;
+    height: 90rem;
+    box-shadow: 0 0 17px 25px rgba(0, 0, 0, 0.993) inset;
     z-index: 1001;
     left: 0;
     top: 0;
@@ -21,7 +21,6 @@
 
 
 /* portada img */
-
 
 
 .imgPortada{
@@ -77,11 +76,18 @@
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
     border: 1px solid rgba(255, 255, 255, 0.322);
+    transition: all .3s ease;
 }
 
 .button_moreInfo p{
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     text-shadow: 0 0 10px black;
+    color: white;
+}
+
+.button_moreInfo:hover{
+    background-color: rgba(209, 209, 209, 0.664);
+    transition: all .3s ease;
 }
 
 .button_moreInfo img{

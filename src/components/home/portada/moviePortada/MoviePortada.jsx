@@ -1,7 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import infoIcon from "../../../assets/info.png"
 
 const MoviePortada = ({key, movie}) => {
+
   return (
     <div className="moviePortada">
         <div className="blur_portada"></div>
@@ -14,7 +16,11 @@ const MoviePortada = ({key, movie}) => {
             </div>
             <div className="button_moreInfo" >
                 <img src={infoIcon} alt="infoIcon" />
-                <p>More Information</p>
+
+                <NavLink to={`/tv/:${movie.id}`}>
+                    <p>More Information</p>
+                </NavLink>
+
             </div>
         </div>
         <img className='imgPortada' id={key} src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="sliderPortada" />

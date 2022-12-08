@@ -12,7 +12,6 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.973);
     box-shadow: 0 -15px 7px 20px rgba(2, 0, 0, 0.993) ;
-
 }
 
 
@@ -228,6 +227,8 @@
 }
 
 
+/* search */
+
 .busqueda{
     position: absolute;
     left: 19rem;
@@ -237,6 +238,7 @@
     display: flex;
     justify-content:  flex-star;
     align-items: center;
+    z-index: 100;
 }
 
 .boxSearch{
@@ -282,6 +284,34 @@
     width: 2.5rem;
     object-fit: contain;
 }
+
+.enviar{
+    display: none;
+}
+
+.enviar_active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -.6rem;
+    top: -.1rem;
+    background-image: url("../assets/enviar.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: .4rem;
+    filter: drop-shadow( 0 0 2px white);
+    border: none;
+    width: 3rem;
+    height: 3.2rem;
+    text-align: center;
+    cursor: pointer;
+    z-index: 200;
+}
+
 
 
 @media screen and (max-width:600px){

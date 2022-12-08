@@ -1,0 +1,13 @@
+.searchContent{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 14rem 0;
+    padding-bottom: 8rem;
+    gap: 4rem;
+}
