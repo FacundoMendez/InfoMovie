@@ -44,8 +44,9 @@
     transition: background-position 1s steps(28);
     transition-duration: 0s;
     position: relative;
-    filter: invert() hue-rotate(10deg) drop-shadow( 0 0 10px black);
+    filter:   drop-shadow( 0 0 20px rgb(255, 254, 254)) ;
 }
+
 
 .heart-is-active {
     width: 80px;
@@ -55,7 +56,7 @@
     transition: background-position 1s steps(28);
     transition-duration: 1s;
     background-position: -2800px 0;
-    filter: invert() hue-rotate(10deg) drop-shadow( 0 0 10px black);
+    filter: invert() hue-rotate(10deg) drop-shadow( 0 0 10px black) contrast(110%);
 }
 
 .stage {

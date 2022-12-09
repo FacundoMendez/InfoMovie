@@ -5,8 +5,6 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Search from './search/Search';
 import axios from 'axios';
 import Context from '../context/Context';
-import nameSection from '../home/apiHome/NameSectionsMovie';
-import nameSectionTv from '../home/apiHome/NameSectionsMovie';
 
 
 const Nav = () => {
@@ -55,26 +53,19 @@ const Nav = () => {
   },[])
 
 
-  
-const menuItems = [
-  {
-    name: "Movies",
-    items: [nameSection],
-  },
-  {
-    name: "Series",
-    items: [nameSectionTv],
-  },
 
-];
-
-const [menuItem, setMenuItem] = useState(false); 
+  const [menuItem, setMenuItem] = useState(false); 
+  const [menuItemTv, setMenuItemTv] = useState(false); 
 
 
-const handlerMenu = () => {
-  setMenuItem(!menuItem)
-}
-
+  const handlerMenuMovie = () => {
+    setMenuItem(!menuItem)
+    setMenuItemTv(false)
+  }
+  const handlerMenuTv = () => {
+    setMenuItemTv(!menuItemTv)
+    setMenuItem(false)
+  }
 
   return (
 
@@ -96,8 +87,6 @@ const handlerMenu = () => {
             <p>Logout</p> 
           </div>
     
-      
-
           {/* links de nav */}
 
           {isActive ? 
@@ -108,8 +97,10 @@ const handlerMenu = () => {
                     </NavLink>
                     <hr className='list_hr' />
 
+                    {/* section movie */}
+
                     <div className="movieSelect">
-                      <p onClick={handlerMenu}>Movies</p> 
+                      <p className='title_select' onClick={handlerMenuMovie}>Movies</p> 
                       <div className={!menuItem ?"triangle_back": "triangle_top"}></div>
                       {
                         menuItem &&
@@ -128,24 +119,27 @@ const handlerMenu = () => {
                       }
                     </div>
 
+                    {/* section tv */}
+
                     <div className="movieSelect">
-                      <p>Series</p>
+                      <p className='title_select' onClick={handlerMenuTv}>Series</p>
+                        <div className={!menuItemTv ?"triangle_back_tv": "triangle_top_tv"}></div>
+                        {
+                          menuItemTv &&
+                            <ul className='desplegableMenu_tv'>
+                              <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
+                              {
+                                  sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
+
+                                    return <a key={key} href={`/section/:${section.id}`} >
+                                              <li key={key} onClick={handleToggle}>{section.name}</li> 
+                                            </a> 
+                                    })
+                              }
+                            </ul> 
+                          
+                        }
                     </div>
-
-{/* 
-                    <ul>
-                      <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
-                      {
-                          sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
-
-                            return <a key={key} href={`/section/:${section.id}`} >
-                                      <li key={key} onClick={handleToggle}>{section.name}</li> 
-                                    </a> 
-                            })
-                      }
-
-                    </ul> */}
-                    
                   </div>
                 </div>
               : 

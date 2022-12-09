@@ -93,7 +93,6 @@
     gap: 1.7rem;
     padding-top: 8rem;
     transition: all .4s ease;
-
 }
 
 .movieSelect{
@@ -104,9 +103,13 @@
     letter-spacing: 1px;
     cursor: pointer;
     transition: all .4s ease-in-out;
-
 }
 
+.title_select{
+    text-shadow: 0 0 2px white;
+}
+
+/* desplegable movie */
 .desplegableMenu{
     list-style: none;
     display: flex;
@@ -120,15 +123,40 @@
     position: relative;
     left: -9.5rem;
     transition: all .4s ease-in-out;
-
 }
+
+/* desplegable tv */
+
+.desplegableMenu_tv{
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1rem ;
+    margin-top: 3rem;
+    width: 30rem;
+    position: relative;
+    left: -8.8rem;
+    transition: all .4s ease-in-out;
+}
+
 
 .box_links_nav li {
     font-size: 1.5rem;
-    color: white;
+    color: rgb(216, 216, 216);
     width: 16rem;
     letter-spacing: 1px;
 }
+
+.box_links_nav li:hover{
+    color: rgb(142, 253, 235);
+    scale: 1.03;
+    text-shadow: 0 0 2px white;
+}
+
+/* triangle movie */
 
 .triangle_top{
     position: relative;
@@ -136,11 +164,11 @@
     height: 0;
     border-style: solid;
     border-width: 0 8px 8px 8px;
-    border-color: transparent transparent #ffffff transparent;
-    top: .8rem;
-    left: 1rem;
+    border-color: transparent transparent #ffffffb6 transparent;
+    backdrop-filter: blur(3px);
+    top: .7rem;
+    left: 6rem;
 }
-
 
 .triangle_back{
     position: relative;
@@ -148,9 +176,36 @@
     height: 0;
     border-style: solid;
     border-width: 8px 8px 0 8px;
-    border-color: #ffffff transparent transparent transparent;
-    top: .8rem;
-    left: 1rem;
+    border-color: #ffffffb6 transparent transparent transparent;
+    backdrop-filter: blur(3px);
+    top: .7rem;
+    left: 6rem;
+}
+
+/* triangle tv */
+
+.triangle_top_tv{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #ffffffb6 transparent;
+    backdrop-filter: blur(3px);
+    top: .7rem;
+    left: 6.8rem;
+}
+
+.triangle_back_tv{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: #ffffffb6 transparent transparent transparent;
+    backdrop-filter: blur(3px);
+    top: .7rem;
+    left: 6.8rem;
 }
 
 
