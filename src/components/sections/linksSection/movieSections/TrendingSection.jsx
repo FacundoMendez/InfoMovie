@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import "./sectionsStyle.css"
 import axios from 'axios'
-import CardsSection from '../CardsSection'
-import Pagination from '../componentsSection/pagination/Pagination'
-import { NavLink } from 'react-router-dom'
+import Pagination from '../../componentsSection/pagination/Pagination'
+import CardsSectionMovie from '../../CardsSectionMovie'
 
 
 const TrendingSection = () => {
@@ -33,7 +32,7 @@ const TrendingSection = () => {
                 <div className="box_list_sections">
                     {
                         movieList.map((movie, key) => {
-                            return <NavLink key={key} to={`/movie/:${movie.id}`}><CardsSection key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}/></NavLink>
+                            return <CardsSectionMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id}/>
                         })
                     }
                 </div>

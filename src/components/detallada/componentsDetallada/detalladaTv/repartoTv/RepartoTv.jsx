@@ -24,7 +24,6 @@ const RepartoTv = ({idMovie}) => {
               
     }, [setMovie , setLoading, idMovie])
 
-    console.log(movie)
 
 
     const settings = {

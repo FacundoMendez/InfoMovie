@@ -48,9 +48,8 @@ const InfoMovieDetail = ({idMovie , movie}) => {
             }
         }
               
-    }, [setMovieInfo, inputValue  ])
+    }, [setMovieInfo, inputValue ,idMovie  ])
 
-    console.log(movie)
 
   return (
     <>

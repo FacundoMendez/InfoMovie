@@ -26,7 +26,6 @@ const ApiMovieHome = ({movieName, movieId}) => {
 
 
   const settings = {
-      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 7,
@@ -91,7 +90,7 @@ const ApiMovieHome = ({movieName, movieId}) => {
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return <NavLink key={key} to={`/movie/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
+                    return  <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id}/> 
                 })
             }
         </Slider>

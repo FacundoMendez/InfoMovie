@@ -18,12 +18,13 @@ const Search = () => {
 
     const searchSubmit = e.currentTarget.searchSubmit.value.trim()
 
-    if (searchSubmit.length >= 1 ){
+    if (searchSubmit.length >= 2 ){
       navigate(`/search/:${searchSubmit}`)
       e.currentTarget.searchSubmit.value = ""
     }
 
   }
+  
   
 
   return (

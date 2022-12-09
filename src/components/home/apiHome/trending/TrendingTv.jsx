@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react'
-import CardMovie from '../../cardMovie/CardMovie'
 import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import { NavLink } from 'react-router-dom';
+import CardTv from '../../cardTv/CardTv';
 
 const TrendingTv = () => {
 
@@ -24,7 +24,6 @@ const TrendingTv = () => {
 
 
     const settings = {
-        dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 7,
@@ -90,7 +89,7 @@ const TrendingTv = () => {
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return <NavLink key={key} to={`/tv/:${movie.id}`}> <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} /> </NavLink>
+                    return <CardTv key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id} /> 
                 })
             }
         </Slider>

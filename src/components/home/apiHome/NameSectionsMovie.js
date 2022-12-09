@@ -1,4 +1,4 @@
-const nameSection = ([
+const nameSectionTv = ([
   {
     name: "Action",
     id: "28"
@@ -74,4 +74,4 @@ const nameSection = ([
   },
 ])
 
-export default nameSection
+export default nameSectionTv

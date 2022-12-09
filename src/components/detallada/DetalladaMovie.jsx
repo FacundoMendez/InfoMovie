@@ -53,7 +53,7 @@ const DetalladaMovie = () => {
         })
 
         setTimeout(() => {
-            window.location.href = "/"
+            window.location.href = "/home"
         }, 2500);
     }
 

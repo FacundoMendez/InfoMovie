@@ -3,15 +3,15 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { lazy , Suspense , useState , useEffect} from 'react';
 import Spinner from './components/assets/spinner/Spinner';
 import Context from './components/context/Context';
+import Home from './components/home/Home';
 
-const Home = lazy(() => import('./components/home/Home'))
 const Nav = lazy(() => import('./components/nav/Nav'))
 const DetalladaTv = lazy(() => import('./components/detallada/DetalladaTv'))
 const DetalladaMovie = lazy(() => import('./components/detallada/DetalladaMovie'))
-const TrendingSection = lazy(() => import('./components/sections/linksSection/TrendingSection'))
+const TrendingSection = lazy(() => import('./components/sections/linksSection/movieSections/TrendingSection'))
 const Login = lazy(() => import('./components/login/Login'))
 const ContentSearch = lazy(() => import('./components/contentSearch/ContentSearch'))
-const LinkSections = lazy(() => import('./components/sections/linksSection/LinkSections'))
+const LinkSections = lazy(() => import('./components/sections/linksSection/movieSections/LinkSections'))
 const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
 
 

@@ -5,6 +5,8 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import Search from './search/Search';
 import axios from 'axios';
 import Context from '../context/Context';
+import nameSection from '../home/apiHome/NameSectionsMovie';
+import nameSectionTv from '../home/apiHome/NameSectionsMovie';
 
 
 const Nav = () => {
@@ -53,6 +55,26 @@ const Nav = () => {
   },[])
 
 
+  
+const menuItems = [
+  {
+    name: "Movies",
+    items: [nameSection],
+  },
+  {
+    name: "Series",
+    items: [nameSectionTv],
+  },
+
+];
+
+const [menuItem, setMenuItem] = useState(false); 
+
+
+const handlerMenu = () => {
+  setMenuItem(!menuItem)
+}
+
 
   return (
 
@@ -86,6 +108,31 @@ const Nav = () => {
                     </NavLink>
                     <hr className='list_hr' />
 
+                    <div className="movieSelect">
+                      <p onClick={handlerMenu}>Movies</p> 
+                      <div className={!menuItem ?"triangle_back": "triangle_top"}></div>
+                      {
+                        menuItem &&
+                          <ul className='desplegableMenu'>
+                            <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
+                            {
+                                sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
+
+                                  return <a key={key} href={`/section/:${section.id}`} >
+                                            <li key={key} onClick={handleToggle}>{section.name}</li> 
+                                          </a> 
+                                  })
+                            }
+                          </ul> 
+                        
+                      }
+                    </div>
+
+                    <div className="movieSelect">
+                      <p>Series</p>
+                    </div>
+
+{/* 
                     <ul>
                       <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
                       {
@@ -97,7 +144,8 @@ const Nav = () => {
                             })
                       }
 
-                    </ul>
+                    </ul> */}
+                    
                   </div>
                 </div>
               : 

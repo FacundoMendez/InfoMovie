@@ -12,7 +12,7 @@ const MoviePortada = ({key, movie}) => {
                 <h2>{movie.name === undefined ? movie.title : movie.name}</h2>
             </div>
             <div className="descripcion_portada">
-                <p>{movie.overview}</p>
+                <p>{movie.overview.substring(0, 200)} ...</p>
             </div>
             <div className="button_moreInfo" >
                 <img src={infoIcon} alt="infoIcon" />

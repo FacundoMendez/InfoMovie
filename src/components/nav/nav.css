@@ -63,6 +63,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: 0.5s;
 }
 
 .list_nav::before{
@@ -86,28 +87,72 @@
     background-color: rgba(0, 0, 0, 0.829);
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     gap: 1.7rem;
-    padding-top: 2rem;
+    padding-top: 8rem;
+    transition: all .4s ease;
+
 }
 
-.box_links_nav ul{
+.movieSelect{
+    width: 100%;
+    display: flex;
+    font-size: 1.8rem;
+    padding-left: 4rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+
+}
+
+.desplegableMenu{
     list-style: none;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    gap: 1.7rem;
+    gap: 1.2rem;
     padding: 1rem ;
+    margin-top: 3rem;
+    width: 30rem;
+    position: relative;
+    left: -9.5rem;
+    transition: all .4s ease-in-out;
+
 }
 
 .box_links_nav li {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: white;
+    width: 16rem;
     letter-spacing: 1px;
 }
+
+.triangle_top{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 8px 8px;
+    border-color: transparent transparent #ffffff transparent;
+    top: .8rem;
+    left: 1rem;
+}
+
+
+.triangle_back{
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8px 0 8px;
+    border-color: #ffffff transparent transparent transparent;
+    top: .8rem;
+    left: 1rem;
+}
+
 
 .linkHome_despl{
     font-size: 1.7rem;
@@ -239,6 +284,7 @@
     justify-content:  flex-star;
     align-items: center;
     z-index: 100;
+    outline: none;
 }
 
 .boxSearch{
@@ -246,9 +292,11 @@
     border-radius: 10px;
     left: 0rem;
     top: -.3rem;
-    border: 2px solid rgba(253, 252, 252, 0.527);
+    border: 2px solid rgba(253, 252, 252, 0.726);
     width: 20rem !important;
     transition: all .4s ease;
+    overflow: hidden;
+    outline: none;
 }
 
 .boxSearch input{
@@ -261,6 +309,9 @@
     outline: none;
     padding: .7rem;
     transition: all .4s ease;
+    background-color: black;
+    background: black;
+    border-radius: 10px;
 }
 
 
@@ -294,8 +345,8 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    right: -.6rem;
-    top: -.1rem;
+    right: -.3rem;
+    top: -.3rem;
     background-image: url("../assets/enviar.png");
     background-size: 80%;
     background-repeat: no-repeat;
@@ -303,18 +354,38 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: .4rem;
-    filter: drop-shadow( 0 0 2px white);
+    filter: drop-shadow( 0 0 2px rgba(255, 255, 255, 0.541));
     border: none;
-    width: 3rem;
-    height: 3.2rem;
+    width: 3.2rem;
+    height: 3.6rem;
     text-align: center;
     cursor: pointer;
     z-index: 200;
+    background-color: #d6d6d6;
+    transition: all .3s ease;
+}
+
+.enviar_active:hover{
+    background-color: #ffffff;
+    transition: all .3s ease;
 }
 
 
 
-@media screen and (max-width:600px){
+@media screen and (max-width:1440px){
+
+    .busqueda{
+        left: 15rem;
+    }
+    
+    .lineNav {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width:550px){
 
     .box_links_nav ul{
         gap: 1.3rem;
@@ -324,4 +395,88 @@
         font-size: 1.6rem;
     }
     
+    .button_login {
+        right: 2rem;
+    }
+
+    .busqueda {
+        left: 14rem;
+    }
+
+    .toggle {
+        left: 2rem;
+    }
+
+    .boxSearch {
+        width: 15rem !important;
+        top: -.7rem;
+    }
+    .busqueda img {
+        left: -3.5rem;
+        top: -.2rem;
+    }
+}
+
+
+@media screen and (max-width:420px){
+
+    .busqueda {
+        left: 11rem;
+    }
+
+    .toggle {
+        left: 1.5rem;
+    }
+
+    .boxSearch {
+        width: 14rem !important ;
+        top: -.7rem;
+        outline: none;
+    }
+    .busqueda img {
+        left: -3.5rem;
+        filter: contrast(60%);
+    }
+
+    .button_login {
+        width: 8rem;
+        height: 4rem;
+        right: 2rem;
+    }
+
+    .button_login p {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media screen and (max-width:360px){
+
+    .busqueda {
+        left: 11rem;
+    }
+
+    .toggle {
+        left: 1.5rem;
+    }
+
+    .boxSearch {
+        width: 10rem !important ;
+        top: -.7rem;
+        outline: none;
+    }
+    .busqueda img {
+        left: -3.5rem;
+        filter: contrast(60%);
+    }
+
+    .button_login {
+        width: 8rem;
+        height: 4rem;
+        right: 2rem;
+    }
+
+    .button_login p {
+        font-size: 1.6rem;
+    }
 }

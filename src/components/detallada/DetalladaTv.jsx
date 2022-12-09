@@ -28,7 +28,7 @@ const DetalladaTv = () => {
 
     const verifyConnected = () => {
         if (!context.loginConnected ){
-            navigate("/")
+            navigate("/home")
         }
     }
     verifyConnected()

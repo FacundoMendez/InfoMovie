@@ -1,23 +1,41 @@
 .portada{
     position: relative;
     width: 100%;
+    min-height: 89rem;
     height: 89rem;
     overflow: hidden;
     border-radius: 10px;
     z-index: 500;
     top: 3.2rem;
     margin-bottom: 5rem;
+    box-shadow: 0 0 27px 29px rgba(0, 0, 0, 0.993) ;
 }
+
+.moviePortada{
+    position: relative;
+    width: 100%;
+    min-height: 89rem;
+    height: 89rem;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 500;
+    top: 3.2rem;
+    margin-bottom: 5rem;
+    box-shadow: 0 0 27px 29px rgba(0, 0, 0, 0.993) ;
+}
+
 
 .blur_portada{
     position: absolute;
     width: 100.5%;
-    height: 90rem;
+    height: 87rem;
     box-shadow: 0 0 17px 25px rgba(0, 0, 0, 0.993) inset;
     z-index: 1001;
     left: 0;
     top: 0;
 }
+
+
 
 
 /* portada img */
@@ -30,6 +48,7 @@
     height: 100%;
     position: relative;
     top: 0;
+    object-position: top;
     filter: contrast(105%) brightness(105%);
 }
 
@@ -56,12 +75,16 @@
     font-weight: bold;
     text-shadow: 0 0 10px black;
     color: white;
+    filter: drop-shadow(0 0 3px black);
+
 }
 
 .descripcion_portada{
     font-size: 2rem;
     letter-spacing: 1px;
     text-shadow: 0 0 10px black;
+    filter: drop-shadow(0 0 3px black);
+
 }
 
 .button_moreInfo{
@@ -77,6 +100,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.493);
     border: 1px solid rgba(255, 255, 255, 0.322);
     transition: all .3s ease;
+
 }
 
 .button_moreInfo p{
@@ -94,4 +118,119 @@
     width: 2.5rem;
     object-fit: contain;
     filter: drop-shadow( 0 0 10px rgba(0, 0, 0, 0.849));
+}
+
+
+@media screen and (max-width:1440px) {
+    .portada{
+        position: relative;
+        width: 100%;
+        min-height: 80rem;
+        height: 80rem;
+        top: 3.2rem;
+    }
+    
+    .moviePortada{
+        min-height: 80rem;
+        height: 80rem;
+        box-shadow: 0 0 27px 29px rgba(0, 0, 0, 0.993) ;
+    }
+
+    .blur_portada{
+        width: 100.5%;
+        height: 77rem;
+    }
+
+}
+
+
+
+@media screen and (max-width:800px) {
+    .portada{
+        position: relative;
+        width: 100%;
+        min-height: 80rem;
+        height: 80rem;
+        top: 3.2rem;
+    }
+    
+    .moviePortada{
+        min-height: 80rem;
+        height: 80rem;
+        box-shadow: 0 0 27px 29px rgba(0, 0, 0, 0.993) ;
+    }
+    .blur_portada{
+        width: 100.5%;
+        height: 77rem;
+        box-shadow: 0 0 17px 15px rgba(0, 0, 0, 0.993) inset;
+    }
+
+    .box_info_portada{
+        width: 90%;
+        height: 50%;
+    }
+
+    
+    .title_portada{
+        font-size: 3.5rem;
+    }
+
+    .descripcion_portada{
+        font-size: 1.8rem;
+    }
+
+
+}
+
+
+@media screen and (max-width:550px) {
+
+    .blur_portada{
+        width: 100.5%;
+        height: 77rem;
+        box-shadow: 0 0 17px 15px rgba(0, 0, 0, 0.993) inset;
+    }
+
+    .box_info_portada{
+        height: 50%;
+        top: 30rem;
+        width: 98%;
+        left: 1rem;
+    }
+
+    
+    .title_portada{
+        font-size: 3rem;
+        filter: drop-shadow(0 0 4px black);
+    }
+
+    .descripcion_portada{
+        font-size: 1.5rem;
+        filter: drop-shadow(0 0 2px black);
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width:400px) {
+
+    .box_info_portada{
+        width: 98%;
+        left: 0;
+    }
+    
+    .title_portada{
+        font-size: 2.5rem;
+        filter: drop-shadow(0 0 4px black);
+    }
+
+    .descripcion_portada{
+        font-size: 1.5rem;
+        filter: drop-shadow(0 0 2px black);
+    }
+
+
 }

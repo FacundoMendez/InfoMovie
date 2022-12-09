@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import "./cardMovie.css"
+import "../cardMovie/cardMovie.css"
 
 
-const CardMovie = ({ movie , id }) => {
+const CardTv = ({ movie , id }) => {
 
   const [heartButton , setHeartButton ] = useState(false)
 
@@ -13,7 +13,7 @@ const CardMovie = ({ movie , id }) => {
 
   return (
         <div className="cardMovie" >
-          <NavLink  to={`/movie/:${id}`}>  <img src={movie} alt="img movie" /></NavLink>
+          <NavLink  to={`/tv/:${id}`}>  <img src={movie} alt="img movie" /></NavLink>
           <div className="stage">
               <div className={heartButton ? "heart-is-active" : "heart"} id="cora" onClick={handlerHeart}></div>
           </div>
@@ -21,4 +21,4 @@ const CardMovie = ({ movie , id }) => {
   )
 }
 
-export default CardMovie
+export default CardTv

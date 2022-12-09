@@ -30,6 +30,7 @@
     height: 43.5rem;
     border-radius: 10px;
     cursor: pointer;
+    position: relative;
     overflow: hidden ;
 }
 
