@@ -433,9 +433,7 @@
         left: 15rem;
     }
     
-    .lineNav {
-        display: none;
-    }
+
 }
 
 
@@ -463,12 +461,16 @@
     }
 
     .boxSearch {
-        width: 15rem !important;
+        width: 19rem !important;
         top: -.7rem;
     }
     .busqueda img {
         left: -3.5rem;
         top: -.2rem;
+    }
+
+    .lineNav {
+        display: none;
     }
 }
 
@@ -483,11 +485,6 @@
         left: 1.5rem;
     }
 
-    .boxSearch {
-        width: 14rem !important ;
-        top: -.7rem;
-        outline: none;
-    }
     .busqueda img {
         left: -3.5rem;
         filter: contrast(60%);
@@ -515,11 +512,7 @@
         left: 1.5rem;
     }
 
-    .boxSearch {
-        width: 10rem !important ;
-        top: -.7rem;
-        outline: none;
-    }
+   
     .busqueda img {
         left: -3.5rem;
         filter: contrast(60%);

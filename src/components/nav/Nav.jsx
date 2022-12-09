@@ -1,18 +1,17 @@
-import React, { useEffect , useState, useContext} from 'react'
+import React, { useEffect , useState} from 'react'
 import "./nav.css"
 import gsap from 'gsap'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Search from './search/Search';
 import axios from 'axios';
-import Context from '../context/Context';
 
 
 const Nav = () => {
 
-  const context = useContext(Context)
+/*   const context = useContext(Context)
 
   const navigate = useNavigate()
- 
+  */
   const [isActive, setActive] = useState(false); /* active nav */
 
   const [sectionsData, setSectionsData] = useState([]); 
@@ -26,12 +25,12 @@ const Nav = () => {
   
     /* desconecta el login (con el button) */
   
-    const handleDisconnectLogin = () => {
+/*     const handleDisconnectLogin = () => {
       context.setLoginConnected(false);
       sessionStorage.removeItem("token"); 
       navigate("/")
     };
-  
+   */
 
   useEffect(() => {
       gsap.to(".lineNav",{
@@ -51,7 +50,6 @@ const Nav = () => {
         })
 
   },[])
-
 
 
   const [menuItem, setMenuItem] = useState(false); 
@@ -83,16 +81,16 @@ const Nav = () => {
 
           {/* desconecta el login*/}
       
-          <div className="button_login" onClick={() => handleDisconnectLogin()}>
+       {/*    <div className="button_login" onClick={() => handleDisconnectLogin()}>
             <p>Logout</p> 
-          </div>
+          </div> */}
     
           {/* links de nav */}
 
           {isActive ? 
               <div className='list_nav' >
                 <div className="box_links_nav">
-                    <NavLink className="linkHome_despl" to="/home" onClick={handleToggle}>
+                    <NavLink className="linkHome_despl" to="/" onClick={handleToggle}>
                       Home
                     </NavLink>
                     <hr className='list_hr' />

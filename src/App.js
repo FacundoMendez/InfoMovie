@@ -1,15 +1,13 @@
 import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
-import { lazy , Suspense , useState , useEffect} from 'react';
+import { lazy , Suspense} from 'react';
 import Spinner from './components/assets/spinner/Spinner';
-import Context from './components/context/Context';
 import Home from './components/home/Home';
 
 const Nav = lazy(() => import('./components/nav/Nav'))
 const DetalladaTv = lazy(() => import('./components/detallada/DetalladaTv'))
 const DetalladaMovie = lazy(() => import('./components/detallada/DetalladaMovie'))
 const TrendingSection = lazy(() => import('./components/sections/linksSection/movieSections/TrendingSection'))
-const Login = lazy(() => import('./components/login/Login'))
 const ContentSearch = lazy(() => import('./components/contentSearch/ContentSearch'))
 const LinkSections = lazy(() => import('./components/sections/linksSection/movieSections/LinkSections'))
 const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
@@ -18,22 +16,22 @@ const ListLogin = lazy(() => import('./components/listLogin/ListLogin'))
 
 function App() {
 
-  const [loginConnected , setLoginConnected ] = useState([]) /* verify connected user */
-
-  useEffect(() => {
+/*   const [loginConnected , setLoginConnected ] = useState([])  *//* verify connected user */
+/* 
+  useEffect(() => { */
 
       /* detecta si hay token de login */
-      
+/*       
     if(sessionStorage.getItem("token") !== null){
       setLoginConnected(true)
     }else{
       setLoginConnected(false)
     }
 
-  },[loginConnected])
+  },[loginConnected]) */
 
   return (
-    <Context.Provider value={{setLoginConnected , loginConnected}}>
+/*     <Context.Provider value={{setLoginConnected , loginConnected}}> */
       <BrowserRouter>
         <Nav/>
 
@@ -46,13 +44,13 @@ function App() {
             <Route exact path='/movie/:id' element = {<DetalladaMovie/>} />
             <Route exact path='/tv/:idTv' element = {<DetalladaTv/>} />
 
-            <Route exact path='/home' element = {<Home/>} />
-            <Route exact path='/' element = {<Login/>} />
+            <Route exact path='/' element = {<Home/>} />
+            {/* <Route exact path='/' element = {<Login/>} /> */}
           </Routes>
         </Suspense>
       
       </BrowserRouter>
-    </Context.Provider>
+/*     </Context.Provider> */
   );
 }
 

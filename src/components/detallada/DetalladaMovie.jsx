@@ -1,10 +1,9 @@
-import React, {lazy, Suspense, useEffect, useState, useContext} from 'react'
+import React, {lazy, Suspense, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import "./detallada.css"
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import Spinner from '../assets/spinner/Spinner'
-import Context from '../context/Context'
 
 const InfoMovieDetail = lazy(() => import ("./componentsDetallada/detalladaMovie/InfoMovie/InfoMovieDetail"))
 const PortadaDetallada = lazy(() => import ("./componentsDetallada/detalladaMovie/portadaMovie/PortadaDetallada"))
@@ -13,7 +12,6 @@ const Reparto = lazy(() => import ("./componentsDetallada/detalladaMovie/reparto
 
 const DetalladaMovie = () => {
     
-    const context = useContext(Context)
     const {id}= useParams()
     
     let idMovie = id.replace(/:/, '');
@@ -53,14 +51,14 @@ const DetalladaMovie = () => {
         })
 
         setTimeout(() => {
-            window.location.href = "/home"
+            window.location.href = "/"
         }, 2500);
     }
 
 
   return (
     <>
-        {context.loginConnected && loading &&  movie.poster_path !== null ?
+        {loading &&  movie.poster_path !== null ?
         <Suspense fallback={<Spinner/>}>
             <div className="detallada">
                 <PortadaDetallada movie={movie} />

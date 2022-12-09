@@ -1,15 +1,13 @@
-import React, {Suspense, useEffect, useState, useContext} from 'react'
+import React, {Suspense, useEffect, useState} from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import Spinner from '../assets/spinner/Spinner'
-import Context from '../context/Context'
 import BoxCardsSearch from './boxCardsSearch/BoxCardsSearch'
 import "./contentSearch.css"
 
 const ContentSearch = () => {
 
-    const context = useContext(Context)
 
     const {submit} = useParams()
     let submitName = submit.replace(/:/, '');
@@ -52,7 +50,7 @@ const ContentSearch = () => {
             })
     
             setTimeout(() => {
-                window.location.href = "/home"
+                window.location.href = "/"
             }, 2500);
         }
     }
@@ -61,7 +59,7 @@ const ContentSearch = () => {
 
   return (
     <>
-    {context.loginConnected && loading  ?
+    {loading  ?
         <Suspense fallback={<Spinner/>}>
             <div className="searchContent">
                 {movie.length === 0 && errorLenght()}

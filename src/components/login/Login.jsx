@@ -44,7 +44,7 @@ const Login = () => {
                 
                   const token = res.data.token
                   sessionStorage.setItem("token" , token)
-                  navigate("/home")
+                  navigate("/")
                   context.setLoginConnected(true)
             })
     }
