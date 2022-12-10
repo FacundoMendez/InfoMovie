@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { lazy , Suspense} from 'react';
 import Spinner from './components/assets/spinner/Spinner';
 import Home from './components/home/Home';
+import ContentFavs from './components/favs/ContentFavs';
 
 const Nav = lazy(() => import('./components/nav/Nav'))
 const DetalladaTv = lazy(() => import('./components/detallada/DetalladaTv'))
@@ -30,6 +31,29 @@ function App() {
 
   },[loginConnected]) */
 
+  const favMovies = localStorage.getItem("favs")
+
+  let tempMovieInFavs;
+
+  if (favMovies === null){
+    tempMovieInFavs = []
+  }else{
+    
+  }
+
+  const addOrRemoveFavs = (e) => {
+    const btn = e.currentTarget;
+    const parent = btn.parentElement;
+    const imgUrl = parent.querySelector("img").getAttribute("src");
+    const title = parent.querySelector("h5").innerText;
+    const overview = parent.querySelector("p").innerText
+    const movieData = {
+      imgUrl , title, overview , 
+      id: btn.dataset.movieId
+    }
+  }
+
+
   return (
 /*     <Context.Provider value={{setLoginConnected , loginConnected}}> */
       <BrowserRouter>
@@ -43,7 +67,7 @@ function App() {
             <Route exact path='/trending' element = {<TrendingSection/>} />
             <Route exact path='/movie/:id' element = {<DetalladaMovie/>} />
             <Route exact path='/tv/:idTv' element = {<DetalladaTv/>} />
-
+            <Route exact path='/favs' render= {(props) => <ContentFavs addOrRemoveFavs={addOrRemoveFavs} {...props} /> } />
             <Route exact path='/' element = {<Home/>} />
             {/* <Route exact path='/' element = {<Login/>} /> */}
           </Routes>
