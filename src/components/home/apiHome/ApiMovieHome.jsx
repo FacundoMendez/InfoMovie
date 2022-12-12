@@ -73,13 +73,6 @@ const ApiMovieHome = ({movieName, movieId, type}) => {
           }
         },
 
-        {
-          breakpoint: 388,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
       ]
   };
 

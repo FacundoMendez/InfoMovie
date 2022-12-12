@@ -1,16 +1,14 @@
-import React, {useState, useEffect , Suspense} from 'react'
+import React, {useState, useEffect } from 'react'
 import axios from 'axios'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import user from "../../../../assets/user.png"
 import "./reparto.css"
-import Spinner from '../../../../assets/spinner/Spinner';
 
 const Reparto = ({idMovie}) => {
 
     const [movie , setMovie] = useState([])
-    const [loading , setLoading] = useState(false)
 
     useEffect(() => {
         const endpoint = `https://api.themoviedb.org/3/movie/${idMovie}/credits?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US&known_for_department=Acting`
@@ -19,10 +17,9 @@ const Reparto = ({idMovie}) => {
             .then(res => {
                 const data = res.data.cast
                 setMovie(data)
-                setLoading(true)
             })
               
-    }, [setMovie , setLoading, idMovie])
+    }, [setMovie , idMovie])
 
 
     const settings = {
@@ -71,41 +68,30 @@ const Reparto = ({idMovie}) => {
 
   return (
     <>
-        {loading?
-          <Suspense fallback={<Spinner/>}>
-            <div className="container_reparto">
-
-            <div className="reparto">
-                <div className="title_users">
-                  <h2 className='title_reparto'>Distribution</h2>
-                </div>
-                <Slider {...settings}>
-                {
-                    movie.filter(movie => movie.known_for_department='Acting').map((reparto , inx) => {
-                        return <div className='box_user_reparto' key={inx}>
-                                    {
-                                        reparto.profile_path === null ? 
-                                            <img className='repato_img_user_null' src={user}   alt="img reparto" />
-                                        :
-
-                                            <img className='repato_img_user' src={`https://image.tmdb.org/t/p/original${reparto.profile_path}`}   alt="img reparto" />
-                                    }
-                                    <div className="name_reparto"> <strong> {reparto.name} </strong></div>
-                                    <div className="name_reparto_acting"> <strong> {reparto.character} </strong></div>
-
-                                </div>
-                             
-                    }) 
-                }
-                </Slider>
-            </div>
-            </div>
-
-        </Suspense>
-
-        :
-            <Spinner/>
-        }
+         <div className="container_reparto">
+           <div className="reparto">
+               <div className="title_users">
+                 <h2 className='title_reparto'>Distribution</h2>
+               </div>
+               <Slider {...settings}>
+               {
+                   movie.filter(movie => movie.known_for_department='Acting').map((reparto , inx) => {
+                       return <div className='box_user_reparto' key={inx}>
+                                   {
+                                       reparto.profile_path === null ? 
+                                           <img className='repato_img_user_null' src={user}   alt="img reparto" />
+                                       :
+                                           <img className='repato_img_user' src={`https://image.tmdb.org/t/p/original${reparto.profile_path}`}   alt="img reparto" />
+                                   }
+                                   <div className="name_reparto"> <strong> {reparto.name} </strong></div>
+                                   <div className="name_reparto_acting"> <strong> {reparto.character} </strong></div>
+                               </div>
+                            
+                   }) 
+               }
+               </Slider>
+           </div>
+          </div>
     </>
   )
 }

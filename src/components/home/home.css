@@ -72,15 +72,15 @@
     filter: drop-shadow( 0 0 2px black);
 }
 
-.slick-slide > div {
+.slider_cards .slick-slide > div {
     margin: 0 10px;
-  }
+}
   
-  .slick-list {
-    margin: 0 -10px;
-  }
-  .slick-dots li button {
-    display: none !important;
+/* .slider_cards .slick-list {
+  margin: 0 -10px;
+} */
+.slick-dots li button {
+display: none !important;
 }
 
   @keyframes _noiseAnim_judif_1 {
@@ -161,7 +161,7 @@
 @media screen and (max-width:500px) {
     .box_list{
         padding: 2rem 2.5rem;
-        
+        width: 100% !important;
     }
     .home{
         min-height: 100vh;
@@ -171,6 +171,27 @@
     .box_list h2{
         margin-bottom: 4rem;
         font-size: 2.5rem;
+    }
+
+    .slider_cards .slick-slide > div {
+        margin: 0 2px;
+    }
+    .slider_cards {
+        padding-left: 0rem;
+    }
+}
+
+@media screen and (max-width:370px) {
+    .box_list{
+        padding: 2rem 2.5rem;
+        width: 100% !important;
+    }
+    .slider_cards {
+        padding-left: 0rem;
+    }
+
+    .slider_cards .slick-slide > div {
+        margin: 0 2px;
     }
 }
 

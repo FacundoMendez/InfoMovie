@@ -2,9 +2,9 @@ import React, {Suspense, useEffect, useState} from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Spinner from '../assets/spinner/Spinner'
 import BoxCardsSearch from './boxCardsSearch/BoxCardsSearch'
 import "./contentSearch.css"
+import PreloadCards from '../preload/preloadCards/PreloadCards'
 
 const ContentSearch = () => {
 
@@ -60,7 +60,7 @@ const ContentSearch = () => {
   return (
     <>
     {loading  ?
-        <Suspense fallback={<Spinner/>}>
+        <Suspense fallback={<PreloadCards/>}>
             <div className="searchContent">
                 {movie.length === 0 && errorLenght()}
                 <h2 className='title_results_searchs'>Resutls</h2>
@@ -75,7 +75,7 @@ const ContentSearch = () => {
             </div>
         </Suspense>
     :
-        <Spinner/>
+        <PreloadCards/>
     }
 </>
   )

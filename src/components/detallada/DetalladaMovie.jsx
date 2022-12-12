@@ -1,9 +1,9 @@
-import React, {lazy, Suspense, useEffect, useState } from 'react'
+import React, {lazy,  useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import "./detallada.css"
 import axios from 'axios'
 import Swal from 'sweetalert2'
-import Spinner from '../assets/spinner/Spinner'
+import PreloadCards from '../preload/preloadCards/PreloadCards'
 
 const InfoMovieDetail = lazy(() => import ("./componentsDetallada/detalladaMovie/InfoMovie/InfoMovieDetail"))
 const PortadaDetallada = lazy(() => import ("./componentsDetallada/detalladaMovie/portadaMovie/PortadaDetallada"))
@@ -59,15 +59,13 @@ const DetalladaMovie = () => {
   return (
     <>
         {loading &&  movie.poster_path !== null ?
-        <Suspense fallback={<Spinner/>}>
             <div className="detallada">
                 <PortadaDetallada movie={movie} />
                 <Reparto idMovie={idMovie} />
                 <InfoMovieDetail idMovie={idMovie}  movie={movie}/>
             </div>
-        </Suspense>
         :
-            <Spinner/>
+            <PreloadCards/>
         }
     </>
   )

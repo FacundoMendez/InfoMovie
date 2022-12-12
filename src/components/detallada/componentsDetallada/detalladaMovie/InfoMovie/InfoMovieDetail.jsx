@@ -1,6 +1,5 @@
-import React, {useState, useEffect, Suspense} from 'react'
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
-import Spinner from '../../../../assets/spinner/Spinner'
 import "./infoMovieDetail.css"
 
 const InfoMovieDetail = ({idMovie , movie}) => {
@@ -53,36 +52,32 @@ const InfoMovieDetail = ({idMovie , movie}) => {
 
   return (
     <>
-    <Suspense fallback={<Spinner/>}>
 
-            <div className="infoMovieDetail">
-                <h2 className='synopsis_title'>Synopsis</h2>
-                <p className='text_sinapsis_movie'>{movie.overview}</p>
+     <div className="infoMovieDetail">
+         <h2 className='synopsis_title'>Synopsis</h2>
+         <p className='text_sinapsis_movie'>{movie.overview}</p>
 
-                    <div className="box_providers">
-                        <h2 className='available_provider'>Available in:</h2>
-
-                        <select onChange={handleChange} className="select_change_lang">
-                            {options.map((option, key) => (
-                                <option key={key} value={option.value}>{option.label}</option>
-                            ))}
-                        </select>
-                        
-                        {!errorSection && movieInfo !== undefined ? 
-                            <div className="box_img_prover">
-                                {
-                                    movieInfo.map((provider, indx) => {
-                                        return <img className='img_provider' key={indx} src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}  alt="provider" /> 
-                                    })
-                                }
-                            </div>
-                            :
-                            <p>Opss.. information not available</p>
+            <div className="box_providers">
+                <h2 className='available_provider'>Available in:</h2>
+                <select onChange={handleChange} className="select_change_lang">
+                    {options.map((option, key) => (
+                        <option key={key} value={option.value}>{option.label}</option>
+                    ))}
+                </select>
+                
+                {!errorSection && movieInfo !== undefined ? 
+                    <div className="box_img_prover">
+                        {
+                            movieInfo.map((provider, indx) => {
+                                return <img className='img_provider' key={indx} src={`https://image.tmdb.org/t/p/original${provider.logo_path}`}  alt="provider" /> 
+                            })
                         }
                     </div>
-               
+                    :
+                    <p>Opss.. information not available</p>
+                }
             </div>
-        </Suspense>
+     </div>
     
     </>
 

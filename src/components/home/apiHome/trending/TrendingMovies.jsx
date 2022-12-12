@@ -71,20 +71,13 @@ const TrendingMovies = ({type}) => {
             }
           },
 
-          {
-            breakpoint: 388,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
         ]
     };
 
 
   return (
     <div className="box_list">
-        <h2>Top movies</h2>
+        <h2>Top {type === "tv" ? "Series" : "Movies"}</h2>
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {

@@ -11,7 +11,7 @@ const Portada = () => {
     const [portadaMovie , setPortadaMovie] = useState([])
 
     useEffect(() => {
-        const endpoint = "https://api.themoviedb.org/3/trending/tv/week?api_key=d37072b0437145eb49f3db14ffeeda76"
+        const endpoint = "https://api.themoviedb.org/3/trending/tv/day?api_key=d37072b0437145eb49f3db14ffeeda76"
 
         axios.get(endpoint)
             .then(res => {
@@ -29,6 +29,7 @@ const Portada = () => {
         speed: 500,
         initialSlide: 1,
         autoplaySpeed:6000,
+        className:"slider_cards_portadaHome",
     };
 
     console.log(portadaMovie)

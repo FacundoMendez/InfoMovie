@@ -8,17 +8,10 @@ const Preload = () => {
 
         let tl = gsap.timeline()
 
-        tl.to(".line_preload",{
-            opacity:1,
-            duration:1.5,
-            width:"50%"
-        })
-
         tl.to(".preload",{
             delay:.5,
             zIndex: -1 ,
             opacity:0,
-
         })
     
         tl.to(".preload",{
@@ -28,8 +21,14 @@ const Preload = () => {
     },[])
 
   return (
-    <div className="preload">
-        <div className="line_preload"></div>
+    <div className='preload' id='wrapper'>
+        <div id='loading'>
+            <div className='bulletouter'>
+                <div className='bulletinner'></div>
+                <div className='mask'></div>
+                <div className='dot'></div>
+            </div>
+        </div>
     </div>
   )
 }

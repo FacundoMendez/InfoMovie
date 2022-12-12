@@ -1,9 +1,7 @@
-import React, { Suspense } from 'react'
-import Spinner from '../../../../assets/spinner/Spinner'
+import React from 'react'
 
 const PortadaDetallada = ({movie}) => {
   return (
-    <Suspense fallback={<Spinner/>}>
       <div className="portada_detallada">
           <div className="blur_portada_detallada"></div>
 
@@ -18,7 +16,6 @@ const PortadaDetallada = ({movie}) => {
               </div>
           </div>
       </div>
-    </Suspense>
   )
 }
 

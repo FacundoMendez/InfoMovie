@@ -3,6 +3,7 @@ import "./sectionsStyle.css"
 import axios from 'axios'
 import Pagination from '../../componentsSection/pagination/Pagination'
 import CardsSectionMovie from '../../CardsSectionMovie'
+import PreloadCards from '../../../preload/preloadCards/PreloadCards'
 
 
 const TrendingSection = () => {
@@ -40,7 +41,7 @@ const TrendingSection = () => {
 
             </div>
         :
-        null
+        <PreloadCards/>
     }
     </>
   )

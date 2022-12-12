@@ -1,20 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const CardsSectionMovie = ({ movie , id, Type}) => {
 
-  const [heartButton , setHeartButton ] = useState(false)
-
-  const handlerHeart = () => {
-    setHeartButton(!heartButton)
-  }
-
   return (
     <div className="cardMovie_sections" id={id}>
           <NavLink  to={`/${Type}/:${id}`}>  <img src={movie} alt="img movie" /></NavLink>
-          <div className="stage">
-              <div className={heartButton ? "heart-is-active" : "heart"} id="cora" onClick={handlerHeart}></div>
-          </div>
     </div>
   )
 }

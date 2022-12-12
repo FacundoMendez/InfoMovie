@@ -14,9 +14,9 @@ const CardMovie = ({ movie , id , type}) => {
   return (
         <div className="cardMovie" >
           <NavLink  to={`/${type}/:${id}`}>  <img src={movie} alt="img movie" /></NavLink>
-          <div className="stage">
+     {/*      <div className="stage">
               <div className={heartButton ? "heart-is-active" : "heart"} id="cora" onClick={handlerHeart}></div>
-          </div>
+          </div> */}
         </div>
   )
 }
