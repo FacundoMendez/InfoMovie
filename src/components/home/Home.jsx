@@ -5,10 +5,7 @@ import Portada from './portada/Portada'
 import arrowTop from "../assets/arrowTop.png"
 import nameSection from './apiHome/NameSectionsMovie'
 import TrendingMovies from './apiHome/trending/TrendingMovies'
-import TrendingTv from './apiHome/trending/TrendingTv'
 import ApiMovieHome from './apiHome/ApiMovieHome'
-import ApiTvHome from './apiHome/ApiTvHome'
-import NameSectionTv from './apiHome/NameSectionTv'
 
 const Home = () => {
  /*  const navigate = useNavigate() */
@@ -18,16 +15,16 @@ const Home = () => {
     <div className='home'>
         <Preload/>
         <Portada/>
-        <TrendingMovies/>
-        <TrendingTv />
+        <TrendingMovies type="movie"/>
+        <TrendingMovies type="tv"/>
         {
-          nameSection.map((movieSection, key) => {
-            return  <ApiMovieHome  movieName={movieSection.name} movieId={movieSection.id} key={key}/>
+          nameSection[0].map((movieSection, key) => {
+            return  <ApiMovieHome type="movie" movieName={movieSection.name} movieId={movieSection.id} key={key}/>
           })
         }
         {
-          NameSectionTv.map((tvSection, key) => {
-            return  <ApiTvHome  movieName={tvSection.name} movieId={tvSection.id} key={key}/>
+          nameSection[1].map((tvSection, key) => {
+            return  <ApiMovieHome type="tv" movieName={tvSection.name} movieId={tvSection.id} key={key}/>
           })
         }
         <a href="# " >

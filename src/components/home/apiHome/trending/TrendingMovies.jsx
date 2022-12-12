@@ -5,12 +5,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-const TrendingMovies = () => {
+const TrendingMovies = ({type}) => {
 
     const [movieList , setMovieList] = useState([])
 
     useEffect(() => {
-      const endPoint = "https://api.themoviedb.org/3/trending/movie/week?api_key=d37072b0437145eb49f3db14ffeeda76"
+      const endPoint =` https://api.themoviedb.org/3/trending/${type}/week?api_key=d37072b0437145eb49f3db14ffeeda76`
 
       axios.get(endPoint)
         .then( res =>{
@@ -19,7 +19,7 @@ const TrendingMovies = () => {
           setMovieList(apiData.results)
 
         })
-    }, [setMovieList])
+    }, [setMovieList, type])
 
 
     const settings = {
@@ -88,7 +88,7 @@ const TrendingMovies = () => {
          <Slider {...settings}>
             {
                 movieList.map((movie, key) => {
-                    return  <CardMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id} /> 
+                    return  <CardMovie key={key} type={type} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id} /> 
                 })
             }
         </Slider>

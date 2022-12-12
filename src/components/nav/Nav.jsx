@@ -3,7 +3,8 @@ import "./nav.css"
 import gsap from 'gsap'
 import { NavLink } from 'react-router-dom'
 import Search from './search/Search';
-import axios from 'axios';
+import MovieDesp from './desplegable/MovieDesp';
+import TvDesp from './desplegable/TvDesp';
 
 
 const Nav = () => {
@@ -13,9 +14,6 @@ const Nav = () => {
   const navigate = useNavigate()
   */
   const [isActive, setActive] = useState(false); /* active nav */
-
-  const [sectionsData, setSectionsData] = useState([]); 
-  
 
   
   const handleToggle = () => {
@@ -40,15 +38,6 @@ const Nav = () => {
           width:"50%"
       })
   
-      const endpoint = "https://api.themoviedb.org/3/genre/movie/list?api_key=d37072b0437145eb49f3db14ffeeda76&language=en-US"
-
-      axios.get(endpoint)
-        .then(res => {
-          const apiData = res.data
-          setSectionsData(apiData.genres)
-
-        })
-
   },[])
 
 
@@ -102,18 +91,7 @@ const Nav = () => {
                       <div className={!menuItem ?"triangle_back": "triangle_top"}></div>
                       {
                         menuItem &&
-                          <ul className='desplegableMenu'>
-                            <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
-                            {
-                                sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
-
-                                  return <a key={key} href={`/section/:${section.id}`} >
-                                            <li key={key} onClick={handleToggle}>{section.name}</li> 
-                                          </a> 
-                                  })
-                            }
-                          </ul> 
-                        
+                          <MovieDesp handleToggle ={handleToggle} />
                       }
                     </div>
 
@@ -124,17 +102,7 @@ const Nav = () => {
                         <div className={!menuItemTv ?"triangle_back_tv": "triangle_top_tv"}></div>
                         {
                           menuItemTv &&
-                            <ul className='desplegableMenu_tv'>
-                              <a href={`/trending`} ><li onClick={handleToggle}>Trending</li> </a> 
-                              {
-                                  sectionsData.filter(sectionsData => sectionsData.id !== 10749).map((section , key) => {
-
-                                    return <a key={key} href={`/section/:${section.id}`} >
-                                              <li key={key} onClick={handleToggle}>{section.name}</li> 
-                                            </a> 
-                                    })
-                              }
-                            </ul> 
+                            <TvDesp handleToggle={handleToggle} />
                           
                         }
                     </div>

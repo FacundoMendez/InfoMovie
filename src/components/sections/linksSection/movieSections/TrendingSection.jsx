@@ -32,7 +32,7 @@ const TrendingSection = () => {
                 <div className="box_list_sections">
                     {
                         movieList.map((movie, key) => {
-                            return <CardsSectionMovie key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id}/>
+                            return <CardsSectionMovie Type="movie" key={key} movie={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} id={movie.id}/>
                         })
                     }
                 </div>
