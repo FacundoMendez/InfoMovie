@@ -184,11 +184,12 @@ display: none !important;
 
     .home{
         background-image: url("../assets/blur-colors.png");
-        background-position:  35%  -140%;
+        background-position:  35% -120%;
         background-attachment: fixed;
-        background-size:142%;
+        background-size:152%;
         backface-visibility: hidden;
         -webkit-backface-visibility: hidden;
+        background-repeat: no-repeat;
     }
 }
 
