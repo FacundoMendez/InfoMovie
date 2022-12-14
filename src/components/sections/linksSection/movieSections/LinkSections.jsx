@@ -3,7 +3,6 @@ import "./sectionsStyle.css"
 import axios from 'axios'
 import Pagination from '../../componentsSection/pagination/Pagination'
 import { useParams } from 'react-router-dom'
-import Spinner from '../../../assets/spinner/Spinner'
 import CardsSectionMovie from '../../CardsSectionMovie'
 import PreloadCards from '../../../preload/preloadCards/PreloadCards'
 
@@ -16,6 +15,10 @@ const LinkSections = () => {
     const [paginationCount , setPaginationCount] = useState(1)
 
     const [loading , setLoading] = useState(false)
+    const [carga , setCarga] = useState(false)
+    setTimeout(() => {
+      setCarga(true)
+  }, 2000);
 
     let id = roomId.replace(/:/, '');
 
@@ -34,7 +37,7 @@ const LinkSections = () => {
 
   return (
     <>
-        {loading ?
+        {carga && loading ?
             <div className="container_sect">
                 <div className="box_list_sections">
                     {

@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import { lazy , Suspense} from 'react';
-import PreloadCards from './components/preload/preloadCards/PreloadCards';
 import Home from './components/home/Home';
+import Preload from './components/preload/Preload';
 
 const Nav = lazy(() => import('./components/nav/Nav'))
 const LinkSectionsTv = lazy(() => import('./components/sections/linksSection/tvSections/LinkSectionsTv'))
@@ -18,8 +18,7 @@ function App() {
   return (
       <BrowserRouter>
         <Nav/>
-
-        <Suspense fallback={<PreloadCards/>}>
+        <Suspense fallback={<Preload/>}>
           <Routes>
             <Route exact path='/search/:submit' element = {<ContentSearch/>} />
             <Route exact path='/section/movies/:roomId' element = {<LinkSections/>} />
@@ -31,7 +30,6 @@ function App() {
             <Route exact path='/' element = {<Home/>} />
           </Routes>
         </Suspense>
-      
       </BrowserRouter>
   );
 }

@@ -1,14 +1,15 @@
-import React from 'react'
+import React ,  { lazy } from 'react'
 import Preload from '../preload/Preload'
 import "./home.css"
-import Portada from './portada/Portada'
 import arrowTop from "../assets/arrowTop.png"
 import nameSection from './apiHome/NameSectionsMovie'
-import TrendingMovies from './apiHome/trending/TrendingMovies'
-import ApiMovieHome from './apiHome/ApiMovieHome'
+
+const Portada = lazy(() => import('./portada/Portada'))
+const TrendingMovies = lazy(() => import('./apiHome/trending/TrendingMovies'))
+const ApiMovieHome = lazy(() => import('./apiHome/ApiMovieHome'))
+
 
 const Home = () => {
- /*  const navigate = useNavigate() */
 
   return (
   <>

@@ -1,6 +1,6 @@
-.preload{
+.preloadCards{
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     gap: 6rem;
     transition: none !important;
+    opacity: .5;
 }
 
 .box_container{
@@ -33,26 +34,28 @@
     position: absolute;
     top: -8rem;
     left: 0%;
-    background: linear-gradient(to right, #2e2e2e2c 8%, #3f3f3f15 28%, #1f1f1f10 33%);
-    animation-duration: 1.17s;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.123) 8%, rgb(27, 27, 27) 28%, rgba(0, 0, 0, 0.993) 100%);
+    background-color: black;
+    animation-duration: 1.20s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-name: placeHolderShimmer;
     animation-timing-function: linear;
-    background-size: 130rem 40rem;
+    background-size: 120rem 100%;
 }
 
 .placeholder-loader {
   width: 25rem;
   height: 30rem;
   border-radius: 4px;
-  background: linear-gradient(to right, #2e2e2e2c 8%, #3f3f3f15 28%, #1f1f1f10 33%);
-  animation-duration: 1.17s;
+  background: linear-gradient(to right, rgba(19, 19, 19, 0.123) 8%, rgb(37, 37, 37) 28%, rgba(0, 0, 0, 0.993) 100%);
+  background-color: black;
+  animation-duration: 1.20s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-name: placeHolderShimmer;
   animation-timing-function: linear;
-  background-size: 130rem 40rem;
+  background-size: 120rem 100%;
 }
 
 @-webkit-keyframes placeHolderShimmer {
@@ -71,4 +74,31 @@
   100% {
     background-position: 1000px 0;
   }
+}
+
+@media screen and (max-width:1440px){
+  .box_container{
+    top: 5rem;
+  }
+  .box1{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width:900px){
+  .box_container{
+    top: 5rem;
+  }
+
+}
+
+
+@media screen and (max-width:600px){
+  .box_container{
+    top: 20rem;
+  }
+
+
+
 }

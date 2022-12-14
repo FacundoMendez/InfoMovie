@@ -3,7 +3,6 @@ import "../movieSections/sectionsStyle.css"
 import axios from 'axios'
 import Pagination from '../../componentsSection/pagination/Pagination'
 import { useParams } from 'react-router-dom'
-import Spinner from '../../../assets/spinner/Spinner'
 import CardsSectionMovie from '../../CardsSectionMovie'
 import PreloadCards from '../../../preload/preloadCards/PreloadCards'
 

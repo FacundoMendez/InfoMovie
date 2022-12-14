@@ -9,10 +9,6 @@ import TvDesp from './desplegable/TvDesp';
 
 const Nav = () => {
 
-/*   const context = useContext(Context)
-
-  const navigate = useNavigate()
-  */
   const [isActive, setActive] = useState(false); /* active nav */
 
   
@@ -21,15 +17,6 @@ const Nav = () => {
   };
 
   
-    /* desconecta el login (con el button) */
-  
-/*     const handleDisconnectLogin = () => {
-      context.setLoginConnected(false);
-      sessionStorage.removeItem("token"); 
-      navigate("/")
-    };
-   */
-
   useEffect(() => {
       gsap.to(".lineNav",{
           delay:.8,
